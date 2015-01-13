@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>org-page</title>
+    <link>http://heartnheart.github.io/</link>
+    <description>static site generator</description>
+    <pubDate>Tue, 13 Jan 2015 20:06:52 HKT</pubDate>
+    <lastBuildDate>Tue, 13 Jan 2015 20:06:52 HKT</lastBuildDate>
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
+    <item>
+      <title>Title12</title>
+      <link>http://heartnheart.github.io/blog/2015/01/13/Title </link>
+      <description>Description</description>
+      <pubDate>2015-01-13</pubDate>
+      <guid>http://heartnheart.github.io/blog/2015/01/13/Title </guid>
+    </item>
+    <item>
+      <title>Post 2</title>
+      <link>http://heartnheart.github.io/blog/2015/01/13/Post 2</link>
+      <description>Post 2 for testing file linking</description>
+      <pubDate>2015-01-13</pubDate>
+      <guid>http://heartnheart.github.io/blog/2015/01/13/Post 2</guid>
+    </item>
+  </channel>
+</rss>
