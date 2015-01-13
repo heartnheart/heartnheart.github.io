@@ -11,7 +11,7 @@
 This is another good post. Please see file [[file:new-post.org][First post]].
 JJJJJJJJ $4444+4=4$
 
-[[file:tusiji.jpg]]
+[[file:tusiji.jpg][Good caption]]
 
 #+BEGIN_SRC c++
   #include <iostream>
@@ -23,3 +23,4 @@ JJJJJJJJ $4444+4=4$
     return 0;
   }
 #+END_SRC
+[[file:~/heartnheart.github.io/images/cat.jpg]]
