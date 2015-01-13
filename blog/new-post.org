@@ -2,7 +2,7 @@
 #+AUTHOR:      Xiaolong Zhang
 #+EMAIL:       xlzhang@cs.hku.hk
 #+DATE:        2015-01-13 Tue
-#+URI:         /blog/%y/%m/%d/Title 
+#+URI:         /blog/%y/%m/%d/Title
 #+KEYWORDS:    Keywords
 #+TAGS:        Tags
 #+LANGUAGE:    en
