@@ -6,7 +6,7 @@
 #+KEYWORDS:    Test
 #+TAGS:        Test
 #+LANGUAGE:    en
-#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t tex:dvipng
 #+DESCRIPTION: Post 2 for testing file linking
 This is another good post. Please see file [[file:new-post.org][First post]].
 JJJJJJJJ $4444+4=4$
