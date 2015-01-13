@@ -12,3 +12,14 @@ This is another good post. Please see file [[file:new-post.org][First post]].
 JJJJJJJJ $4444+4=4$
 
 [[file:tusiji.jpg]]
+
+#+BEGIN_SRC c++
+  #include <iostream>
+  using namespace std;
+
+  int main()
+  {
+    cout << "hello world" << endl;
+    return 0;
+  }
+#+END_SRC
