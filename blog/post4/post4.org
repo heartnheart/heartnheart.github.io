@@ -10,3 +10,6 @@
 #+DESCRIPTION: Post4
 Post4 add a picture here
 [[file:tusiji.png]] 
+
+
+This is a pdf [[file:DL-Intro-Lee.pdf][PDF]].
