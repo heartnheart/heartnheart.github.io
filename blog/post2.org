@@ -23,4 +23,4 @@ JJJJJJJJ $4444+4=4$
     return 0;
   }
 #+END_SRC
-[[file:~/heartnheart.github.io/images/cat.jpg]]
+[[file:../images/cat.jpg]]
