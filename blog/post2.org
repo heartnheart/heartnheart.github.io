@@ -10,3 +10,5 @@
 #+DESCRIPTION: Post 2 for testing file linking
 This is another good post. Please see file [[file:new-post.org][First post]].
 JJJJJJJJ $4444+4=4$
+
+[[file:tusiji.jpg]]
