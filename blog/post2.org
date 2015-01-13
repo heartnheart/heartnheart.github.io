@@ -24,3 +24,6 @@ JJJJJJJJ $4444+4=4$
   }
 #+END_SRC
 [[file:../images/cat.jpg]]
+
+This is a new file png
+[[file:post2_files/tusiji.jpg]]
