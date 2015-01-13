@@ -1,0 +1,11 @@
+#+TITLE:       Post 2
+#+AUTHOR:      Xiaolong Zhang
+#+EMAIL:       xlzhang@cs.hku.hk
+#+DATE:        2015-01-13 Tue
+#+URI:         /blog/%y/%m/%d/Post 2
+#+KEYWORDS:    Test
+#+TAGS:        Test
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: Post 2 for testing file linking
+This is another good post. Please see file [[file:new-post.org][First post]].
