@@ -17,6 +17,6 @@
 返回 =LIST= 的第 =N= 个元素。 =N= 从 =0= 开始。若 =N= 大于 =LIST= 的长度，则返回 =nil= 。
 #+BEGIN_SRC emacs-lisp
 (nth 0 '(a b c)) ;==> a
-(nth 1 '(a b c)) ;==> b
+(nth 2 '(a b c)) ;==> c
 (nth 4 '(a b c)) ;==> nil
 #+END_SRC
