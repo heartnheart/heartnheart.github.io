@@ -1,0 +1,6 @@
+* 常用函数速查
+* =nth=
+#+BEGIN_SRC emacs-lisp
+  (nth N LIST)
+#+END_SRC
+返回 =LIST= 的第 =N= 个元素。 =N= 从 =0= 开始。若 =N= 大于 =LIST= 的长度，则返回 =nil= 。
