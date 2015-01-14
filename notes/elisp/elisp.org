@@ -1,3 +1,14 @@
+#+TITLE:       Emacs Lisp
+#+AUTHOR:      Xiaolong Zhang
+#+EMAIL:       xlzhang@cs.hku.hk
+#+DATE:        2015-01-14 Wed
+#+URI:         /blog/%y/%m/%d/Emacs Lisp
+#+KEYWORDS:    Manual,Elisp
+#+TAGS:        Manual,Elisp
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: My Manual for Emacs Lisp
+
 * 常用函数速查
 * =nth=
 #+BEGIN_SRC emacs-lisp
