@@ -10,7 +10,7 @@
 #+DESCRIPTION: My Manual for Emacs Lisp
 
 * 常用函数速查
-* =nth=
+** =nth=
 #+BEGIN_SRC emacs-lisp
   (nth N LIST)
 #+END_SRC
