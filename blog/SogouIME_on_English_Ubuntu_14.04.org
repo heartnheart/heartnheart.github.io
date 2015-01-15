@@ -1,0 +1,30 @@
+#+TITLE:       在Emacs 24.3 Ubuntu14.04英文版中使用搜狗输入法
+#+AUTHOR:      Xiaolong Zhang
+#+EMAIL:       xlzhang@cs.hku.hk
+#+DATE:        2015-01-15 Thu
+#+URI:         /blog/%y/%m/%d/SogouIME_on_English_Ubuntu_14.04
+#+KEYWORDS:    Emacs,Ubuntu
+#+TAGS:        Emacs,Ubuntu
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: Describe how to use Sogou IME in Ubuntu 14.04 English Version
+
+* 从命令行启动
+#+begin_src sh
+  LC_CTYPE='zh_CN.UTF-8' emacs
+#+end_src
+* 从Dash（搜索框）启动
+1. 重命名默认启动的emacs24-x
+   #+begin_src sh
+     sudo mv /usr/bin/emacs24-x /usr/bin/emacs24-x_original
+   #+end_src
+2. 创建新的名为emacs24-x的脚本
+   #+begin_src sh
+     echo "LC_CTYPE='zh_CN.UTF-8' emacs24-x_original" | sudo tee /usr/bin/emacs24-x
+     sudo chmod a+x /usr/bin/emacs24-x
+   #+end_src
+* 参考文献
+[[http://blog.csdn.net/csfreebird/article/details/18903755][Ubuntu 13.10 英文版本 Emacs 24.3中文输入]]
+
+
+
