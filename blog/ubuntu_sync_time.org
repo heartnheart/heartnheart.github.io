@@ -1,0 +1,35 @@
+#+TITLE:       HKUCS Ubuntu同步系统时间
+#+AUTHOR:      Xiaolong Zhang
+#+EMAIL:       xlzhang@cs.hku.hk
+#+DATE:        2015-01-15 Thu
+#+URI:         /blog/%y/%m/%d/HKUCS Ubuntu同步系统时间
+#+KEYWORDS:    HKUCS,Ubuntu
+#+TAGS:        HKUCS,Ubuntu
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: Describe how to sync internet time in Ubuntu in HKUCS
+
+默认情况下，同步时间的活不用我们操心，因为Ubuntu会在启动的时候调用一次
+=ntpdate= 同步时间[fn:3]。 但是由于NTP协议本身可能被利用进行DDoS攻击[fn:1]，
+港大CS内网无法正常使用外网的NTP服务器。不过CS内网有自己的NTP服务
+器[fn:2]可用来解决这个问题。
+
+* 使用 =ntpd= 实时同步时间
+1. 安装 =ntpd=
+   #+begin_src sh
+     sudo apt-get install ntp
+   #+end_src
+2. 修改默认时间服务器：打开 =/etc/ntp.conf= 文件，在 =#Specify one or more NTP Servers.= 下面添加
+   #+begin_src sh
+     # Specify one or more NTP servers
+     server ntp.cs.hku.hk
+   #+end_src
+   
+* Footnotes
+
+[fn:1] http://drops.wooyun.org/papers/926
+
+[fn:2] https://intranet.cs.hku.hk/csintranet/contents/technical/howto/www.jsp#ntp
+
+[fn:3] https://help.ubuntu.com/10.04/serverguide/NTP.html
+
