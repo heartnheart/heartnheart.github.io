@@ -9,10 +9,7 @@
 #+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
 #+DESCRIPTION: Describe how to sync internet time in Ubuntu in HKUCS
 
-默认情况下，同步时间的活不用我们操心，因为Ubuntu会在启动的时候调用一次
-=ntpdate= 同步时间[fn:3]。 但是由于NTP协议本身可能被利用进行DDoS攻击[fn:1]，
-港大CS内网无法正常使用外网的NTP服务器。不过CS内网有自己的NTP服务
-器[fn:2]可用来解决这个问题。
+默认情况下，同步时间的活不用我们操心，因为Ubuntu会在启动的时候调用一次=ntpdate= 同步时间[fn:3]。 但是由于NTP协议本身可能被利用进行DDoS攻击[fn:1]，港大CS内网无法正常使用外网的NTP服务器。不过CS内网有自己的NTP服务器[fn:2]可用来解决这个问题。
 
 * 使用 =ntpd= 实时同步时间
 1. 安装 =ntpd=
