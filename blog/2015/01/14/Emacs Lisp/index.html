@@ -45,13 +45,22 @@
 </pre>
 </div>
 <p>
-返回 <code>LIST</code> 的第 <code>N</code> 个元素。 <code>N</code> 从 <code>0</code> 开始。若 <code>N</code> 大于 <code>LIST</code> 的长度，则返回 <code>nil</code> 。
+返回 <code>LIST</code> 的第 <code>N</code> 个元素。 <code>N</code> 从 <code>0</code> 开始。若 <code>N</code> 大于 <code>LIST</code> 的长度，则返回 <code>nil</code> 。 如果 <code>N</code> 是一个负数，则返回 <code>LIST</code> 的第一个元素。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(nth n x) == (car (nthcdr n x))
+</pre>
+</div>
+<p>
+Example:
 </p>
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(nth 0 '(a b c)) ;==&gt; a
 (nth 2 '(a b c)) ;==&gt; c
 (nth 4 '(a b c)) ;==&gt; nil
+(nth -1 '(a b c)) ;==&gt; a
 </pre>
 </div>
 </div>
@@ -63,7 +72,7 @@
     <div>
       <div class="post-meta">
         <span title="post date" class="post-info">2015-01-14</span>
-        <span title="last modification date" class="post-info">2015-01-14</span>
+        <span title="last modification date" class="post-info">2015-01-15</span>
         <span title="tags" class="post-info"><a href="/tags/manual/">Manual</a>, <a href="/tags/elisp/">Elisp</a></span>
         <span title="author" class="post-info">Xiaolong Zhang</span>
       </div>
