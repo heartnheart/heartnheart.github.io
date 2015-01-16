@@ -1,13 +1,13 @@
-#+TITLE:       UFLDL Tutorial 笔记
+#+TITLE:       Stanford Machine Learning Notes
 #+AUTHOR:      Xiaolong Zhang
 #+EMAIL:       xlzhang@cs.hku.hk
 #+DATE:        2015-01-16 Fri
-#+URI:         /blog/%y/%m/%d/UFLDL Tutorial 笔记
-#+KEYWORDS:    UFLDL,notes
-#+TAGS:        UFLDL,notes
+#+URI:         /blog/%y/%m/%d/Stanford Machine Learning Notes
+#+KEYWORDS:    Machine Learning,notes
+#+TAGS:        Machine Learning,notes
 #+LANGUAGE:    en
 #+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
-#+DESCRIPTION: This is the notes when I'm learning UFLDL Tutorial
+#+DESCRIPTION: This is the notes when I'm learning Stanford Machine Learning on Coursera
 
 * Info
 URL is https://class.coursera.org/ml-005/lecture
