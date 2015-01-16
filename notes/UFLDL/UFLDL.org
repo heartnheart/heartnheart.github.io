@@ -29,7 +29,7 @@ Predict continuous valued output (price)
 [[file:./images/screenshot-01.png]]
 **** Classification (Breast cancer (malignant, benign)
 Discrete valued output (0 or 1)
-[[file:./images/screenshot-01.png]]
+[[file:./images/screenshot-02.png]]
 
 *** Unsupervised Learning
 No knowledge is given.
