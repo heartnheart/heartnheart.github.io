@@ -1,0 +1,10 @@
+#+TITLE:       UFLDL Tutorial 笔记
+#+AUTHOR:      Xiaolong Zhang
+#+EMAIL:       xlzhang@cs.hku.hk
+#+DATE:        2015-01-16 Fri
+#+URI:         /blog/%y/%m/%d/UFLDL Tutorial 笔记
+#+KEYWORDS:    UFLDL,notes
+#+TAGS:        UFLDL,notes
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: This is the notes when I'm learning UFLDL Tutorial
