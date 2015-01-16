@@ -8,3 +8,32 @@
 #+LANGUAGE:    en
 #+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
 #+DESCRIPTION: This is the notes when I'm learning UFLDL Tutorial
+
+* Info
+URL is https://class.coursera.org/ml-005/lecture
+
+* Introduciton 
+** What is machine learning
+- Arthur Samuel (1959): *Field of study of that gives computers the ability to learn without being explicitly programmed.* 
+- Tom Mitchel (1998): A Well-posed Learning Problem is *A computer program is said to learn from experience E with repsect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E.
+** Machine learning algorithms:
+We mainly talks about *two types of algorithm*:
+- Supervised Learning
+- Unsupervised Learning
+- Others: Reinforcement Learning, Recommender System.
+And *Practical advice for applying learning algorithm*
+*** Supervised Learning
+"Right Answers" are given. 
+**** Regression (Housing price prediction)
+Predict continuous valued output (price)
+[[file:./images/screenshot-01.png]]
+**** Classification (Breast cancer (malignant, benign)
+Discrete valued output (0 or 1)
+[[file:./images/screenshot-01.png]]
+
+*** Unsupervised Learning
+No knowledge is given.
+**** Google News Grouping
+[[file:./images/screenshot-03.png]]
+**** Cocktail party problem
+[[file:./images/screenshot-04.png]]
