@@ -39,4 +39,4 @@
 
 
 * References
-For details, see the [[file:1.%20Workshop%20Slides.pdf][Workshop PPT]].
+For details, see the [[file:Workshop%20Slides.pdf][Workshop PPT]].
