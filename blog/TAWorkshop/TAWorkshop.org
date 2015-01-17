@@ -1,0 +1,42 @@
+#+TITLE:       TA Workshop 2014-15 2nd semester
+#+AUTHOR:      Xiaolong Zhang
+#+EMAIL:       xlzhang@cs.hku.hk
+#+DATE:        2015-01-17 Sat
+#+URI:         /blog/%y/%m/%d/TA Workshop 2014-15 2nd semester
+#+KEYWORDS:    HKUCS,TA
+#+TAGS:        HKUCS,TA
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: Material Organized from the TA Workshop PPT
+
+
+* *UG* OBL Requirements
+1. OBL System: https://intranet.cs.hku.hk/obl2/
+2. Contact point: Judy (judyli@cs.hku.hk)
+3. Faculty standard: UG courses - 70% of students attaining grade D (50% marks) or above.
+* 4 things to do
+1. *Before the start of the semester*: Contact the course instuctor to have a meeting, tellling them the time you will not be available (attending conferences, rushing for conference submissions ... etc)
+2. *One week before the first lesson*: Set up moodle page for the course, and make it available to students.
+3. *During the semester*:
+   - Tutorial class visit: A team will attend your tutorials/workshops to help you improve your presentation skills.
+   - Return assignment _within 2 weeks_ after the deadline (University Requirement)
+4. *Throughout the semester*: Implement HKUCS's OBL
+* OBL in HKUCS
+1. 10 programme outcomes (PO) setup by HKIE.
+2. Each course has more than one course learning outcomes (CLO), which is related to one or more POs. The CLO of your course can be found at the [[https://intranet.cs.hku.hk/obl2/][OBL System]].
+3. Three kinds of mapping exists: T for teaching, P for practice, and M for measure. T,P is decided by course instructor and TA only need to care about M.
+4. For each selected question, provide:
+   1. The question + sample solution.
+   2. Mark distribution (excel file)
+   3. 2 sample submissions from top. middle, bottom performers (Faculty requirement, totally 6).
+5. For the minimum effort, you only need to find *one* representative question in you course to assess *one* CLO.
+* OBL System
+1. You don't need to care about _Matrix of Programme Outcomes and Course Learning Outcomes_.
+2. You need to operate on _Assessment Activities_.
+   1. Add in assessment tasks for selected question.
+   2. Download marksheet of the assessment task, fill in the student's scores and upload to the system.
+   3. Let the system check if the benchmark is achieved.
+
+
+* References
+For details, see the [[file:1.%20Workshop%20Slides.pdf][Workshop PPT]].
