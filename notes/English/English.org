@@ -1,0 +1,19 @@
+#+TITLE:       English
+#+AUTHOR:      Xiaolong Zhang
+#+EMAIL:       xlzhang@cs.hku.hk
+#+DATE:        2015-01-19 Mon
+#+URI:         /blog/%y/%m/%d/English
+#+KEYWORDS:    English,Notes
+#+TAGS:        Notes
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: My Enlish learning notes
+
+* English Words
+** Idioms
+*** Colors
+**** black sheep (of the family)
+**** blue in the face
+**** red-letter day
+**** white as a ghost
+**** with flying colors
