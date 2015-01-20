@@ -12,8 +12,28 @@
 * English Words
 ** Idioms
 *** Colors
-**** black sheep (of the family)
-**** blue in the face
-**** red-letter day
-**** white as a ghost
-**** with flying colors
+1. black sheep [usually singular]
+   A person who is different from the rest of their family or another group, and who is considered bad or embarrassing. 
+   #+begin_example
+   the black sheep of the family
+   #+end_example
+2. do somethign till you are blue in the face (informal)
+   to try to do something as hard and as long as you possibly can *but without success*
+   #+begin_example
+   You can argue till you're blue in the face, but you won't change my mind.
+   #+end_example
+3. red-letter day
+   an important day, or a day that you will remember, *because of something good that happened then*. It's from the custome of using red ink to mark holidays and festivals on a calendar.
+   #+begin_example
+   birthdays, wedding anniversaries and otehr red-letter days
+   #+end_example
+4. white as a ghost [of some one]
+   extremely pale, as if frightened.
+   #+begin_example
+   My sister became white as ghost when she saw the man at the window.
+   #+end_example
+5. with flying colors
+   with great success.
+   #+begin_example
+   She took a driving test and passed with flying colors.
+   #+end_example
