@@ -79,3 +79,16 @@ So now let's compare function \(h_\theta (x)\) and function \(J(\theta_1)\):
 
 Then let's come back to the original function, where we don't have the constrain that \(\theta_0 = 0\). The comparison is like
 [[file:./images/screenshot-06.png]]
+** Gradient Descent
+Now we have some function \(J(\theta_0,\theta_1)\) and we want to \(\underset{\theta_0,\theta_1}{\text{minimize}}J(\theta_0,\theta_1)\), we use *gradient descent* here, which
+1. Start with some \(\theta_0,\theta_1\),
+2. Keep changing \(\theta_0,\theta_1) to reduce \(J(\theta_0,\theta_1)\), until we hopefully end up at a minimum.
+
+To help understand gradient descent, suppose you are standing at one point on the hill, and you want to take a small step to step downhill as quickly as possible, then you would choose the deepest direction to downhill.
+[[file:./images/screenshot-07.png]]
+You keep doing this until to get to a local minimum.
+[[file:./images/screenshot-08.png]]
+
+But if you start with a different initial position, gradient descent will take you to a (very) different position.
+[[file:./images/screenshot-08.png]]
+
