@@ -1,0 +1,20 @@
+#+TITLE:       LaTeX notes
+#+AUTHOR:      Xiaolong Zhang
+#+EMAIL:       xlzhang@cs.hku.hk
+#+DATE:        2015-01-21 Wed
+#+URI:         /blog/%y/%m/%d/LaTeX notes
+#+KEYWORDS:    LaTeX
+#+TAGS:        LaTeX
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: This is my notes when I'm studying LaTeX
+
+
+* Package General Info
+** How to find documentation for a specific package
+#+begin_src sh
+  texdoc <package-name>
+#+end_src
+* Specific Package Notes
+** algorithms
+
