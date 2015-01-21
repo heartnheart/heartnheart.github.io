@@ -61,6 +61,21 @@ J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}\left( h_\theta(x^{(i)}) - y^{(
 \end{gather*}
 
 This cost function is also called *squared error function*. There are other cost functions, but it turns out that squared error function is a resonable choice and will work for most of regression problem.
+** Cost Function Intuition
+Before getting a intuition about the cost function, let's have a recap, we now have
+1. Hypothesis: \[h_\theta (x) = \theta_0 + \theta_1 x\]
+2. Parameters: \[\theta_0,\theta_1\]
+3. Cost Function: \[J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}\left( h_\theta(x^{(i)}) - y^{(i)} \right)^2 \]
+4. Goal: \[\underset{\theta_0,\theta_1}{\text{minimize}} J(\theta_0,\theta_1)\]
 
+In order to visualize our cost function, we use a simplified hypothesis function: \(h_\theta (x) = \theta_1 x\), which sets \(\theta_0\) to \(0\). So now we have
+1. Hypothesis: \[h_\theta (x) =  \theta_1 x\]
+2. Parameters: \[\theta_1\]
+3. Cost Function: \[J(\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}\left( h_\theta(x^{(i)}) - y^{(i)} \right)^2 \]
+4. Goal: \[\underset{\theta_1}{\text{minimize}} J(\theta_1)\]
 
+So now let's compare function \(h_\theta (x)\) and function \(J(\theta_1)\):
+[[file:./images/screenshot-05.png]]
 
+Then let's come back to the original function, where we don't have the constrain that \(\theta_0 = 0\). The comparison is like
+[[file:./images/screenshot-06.png]]
