@@ -37,3 +37,30 @@ No knowledge is given.
 [[file:./images/screenshot-03.png]]
 **** Cocktail party problem
 [[file:./images/screenshot-04.png]]
+* Linear Regression
+** Model Representation
+Notations:
+1. \(m\) is Number of training examples.
+2. \(x\)'s is "input" variable  / feature.
+3. \(y\)'s is "output" variable / "target" variables.
+4. \((x,y)\) is one training example.
+5. \((x^{(i)},y^{(i)})\) is the \(i\)th example, \(i\) starts from \(0\).
+6. \(h\) is called hypothesis, it maps the input to output. In this lecture, we represent \(h\) using linear function, thus it's called *linear regression*. For linear regression with one variable, it's called *univariate linear regression*. For example, the *univariate linear regression* is usually written as: \(h_\theta (x) = \theta_0 + \theta_1 x\). The \(\theta\) here represents the coefficient variables. Sometimes it's written as \(h(x)\) as a shorthand.
+** Cost Function
+Since the hypothesis is written as \(h_\theta (x) = \theta_0 + \theta_1 x\), where \(\theta_i\)'s are the parameters, then how to choose \(\theta_i\)'s?
+The idea is to choose \(\theta_0, \theta_1\) so that \(h_\theta (x)\) is close to \(y\) for our training examples \((x,y)\). More formally, we want to
+\[
+\underset{\theta_0,\theta_1}{\text{minimize}} \frac{1}{2m}\sum_{i=1}^{m}\left( h_\theta(x^{(i)}) - y^{(i)} \right)^2
+\],
+where \(m\) is the number of trainnig examples. To recap, we're minimizing half of the averaging error. Note that the variable here are \(\theta\)s, and \(x\) and \(y\)'s are constants.
+
+By convention, we define the *cost function* \(J(\theta_0,\theta_1)\) to represent the objective function. That is
+\begin{gather*}
+J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}\left( h_\theta(x^{(i)}) - y^{(i)} \right)^2 \\
+\underset{\theta_0,\theta_1}{\text{minimize}} J(\theta_0,\theta_1)
+\end{gather*}
+
+This cost function is also called *squared error function*. There are other cost functions, but it turns out that squared error function is a resonable choice and will work for most of regression problem.
+
+
+
