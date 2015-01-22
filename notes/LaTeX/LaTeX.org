@@ -10,11 +10,62 @@
 #+DESCRIPTION: This is my notes when I'm studying LaTeX
 
 
+* LaTeX WIKI Books
+** LaTeX/Macros
+There are situations where LaTeX does not provide a command or environment that matches your needs, or the output of produced by some existing command may not meet your requirements. When this happens, we can teach LaTeX new tricks:
+*** New Commands
+To add your own command, use
+#+begin_src latex
+\newcommand{name}[num]{definition}
+#+end_src
+=name= is the new command name, note that name *can not* contain digits. =num= specifies the number of arguments the new command takes (up to *9*). If missing it defaults to 0, i.e. no argument allowed. =definition= is the text to be replaced.
+A simple tex replacement:
+#+begin_src latex
+\newcommand{\wbal}{The Wikibook about \LaTeX}
+This is ‘‘\wbal'' \ldots{} ‘‘\wbal''
+#+end_src
+Commands take arguments:
+#+begin_src latex
+\newcommand{\wbalsup}[1] {
+  This is the Wikibook about LaTeX
+  supported by #1}
+\newcommand{\wbalTwo}[2] {
+  This is the Wikibook about LaTeX
+  supported by #1 and #2}
+% in the document body:
+\begin{itemize}
+\item \wbalsup{Wikimedia}
+\item \wbalsup{lots of users!}
+\item \wbalTwo{John Doe}{Anthea Smith}
+\end{itemize}
+#+end_src
+Note that there is no overriding function in LaTeX, so you have to give them different names even when two commands only differ in the number of arguments.
+
+Use =\renewcommand= to explicityl overwrite an existing command. Use =\providecommand= to let LaTeX silently ignore the new command if the command is already defined.
+
+If you want a default parameter for =\newcommand=, use the form
+#+begin_src latex
+  \newcommand{name}[num][default]{defintion}
+#+end_src
+This will make first argument optional, and if not specified, use the value =default=.
+For example:
+#+begin_src latex
+  \newcommand{\wbalTwo}[2][Wikimedia]{
+    This is the Wikibook about LaTeX
+    supported by {#1} and {#2}!}
+  % in the document body:
+  \begin{itemize}
+  \item \wbalTwo{John Doe}
+  \item \wbalTwo[lots of users]{John Doe}
+  \end{itemize}
+#+end_src
+
+Some commands are /fragile/, that is they fail in some environments. If a macro works in body text but not (for example) in a figure caption, then replace the =\newcommand{\MyCommand}= with =\DeclareRobustCommand{\MyCommand}= in the preamble. This is especially true for macros which, when expanded, produce text that is written to a =.aux= file.
 * Package General Info
 ** How to find documentation for a specific package
 #+begin_src sh
   texdoc <package-name>
 #+end_src
 * Specific Package Notes
-** algorithms
-
+** algorithms [2009-08-24 Mon]
+This package provides two environments, =algorithmic= and =algorithm=, which are designed to be used together but may be used saparately depending on the necessities of the user. The =algorithmic= environment provides an environment for describing algorithms and the =algorithm= environment provids a "float" wrapper for algorithms (implemented using =algorithmic= or some other methdo at the user's option).
