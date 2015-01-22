@@ -8,7 +8,7 @@
 #+LANGUAGE:    en
 #+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
 #+DESCRIPTION: This is my notes when I'm studying LaTeX
-
+#+LATEX_HEADER: \usepackage{algorithmic}
 
 * LaTeX WIKI Books
 ** LaTeX/Macros
@@ -67,5 +67,74 @@ Some commands are /fragile/, that is they fail in some environments. If a macro 
   texdoc <package-name>
 #+end_src
 * Specific Package Notes
-** algorithms [2009-08-24 Mon]
+** *algorithms* Bundle  [2009-08-24 Mon] =algorithm= and =algorithmic=
+Note that *algorithms* is a bundle which provide =algorithm= and =algorithmic= package, you should use =\usepackage{algorithm}= or =\usepackage{algorithmic}= instead of =\usepackage{algorithms}=.
+
 This package provides two environments, =algorithmic= and =algorithm=, which are designed to be used together but may be used saparately depending on the necessities of the user. The =algorithmic= environment provides an environment for describing algorithms and the =algorithm= environment provids a "float" wrapper for algorithms (implemented using =algorithmic= or some other methdo at the user's option).
+*** The =algorithmic= package
+This package provides a number of commands for typesettings popular algorithmic constructus. 
+**** Simple Statement
+#+begin_src latex
+  \begin{algorithmic}
+    \STATE <text>
+  \end{algorithmic}
+#+end_src
+**** =if-then-else=
+#+begin_src latex
+  \begin{algorithmic}
+    \IF{<condition>} <text> \ENDIF
+    \IF{<condition>} <text1> \ELSE <text2> \ENDIF
+    \IF{<condition>} <text1> \ELSIF{<condition2>} <text2> \ELSE <text3> \ENDIF
+  \end{algorithmic}
+#+end_src
+In the third forms there is no limit placed on the number of =\ELSIF= that may be used.
+**** =for= loop
+#+begin_src latex
+  \begin{algorithmic}
+    \FOR{<condition>} <text> \ENDFOR
+    \FORALL{<condition>} <text> \ENDFOR
+  \end{algorithmic}
+#+end_src
+You can use =\TO= connective for distinct *to* text.
+**** =while= loop
+#+begin_src latex
+  \begin{algorithmic}
+    \WHILE{<condition> <text> \ENDWHILE
+  \end{algorithmic}
+#+end_src
+**** =repeat-until= loop
+#+begin_src latex
+  \REPEAT <text> \UNTIL{<condition>}
+#+end_src
+**** Infinit loop
+#+begin_src latex
+  \begin{algorithmic}
+    \LOOP <text> \ENDLOOP
+  \end{algorithmic}
+#+end_src
+**** Logic connectives
+We have =\AND=, =\OR=, =\XOR=, =\NOT=.
+**** Precondition
+#+begin_src latex
+\REQUIRE <text>
+#+end_src
+**** Postcondition
+#+begin_src latex
+\ENSURE <text>
+#+end_src
+**** Returning Values
+#+begin_src latex
+  \RETURN <text>
+#+end_src
+True and false values: =\TRUE= and =\FALSE=.
+**** Printing messages
+#+begin_src latex
+  \PRINT <text>
+#+end_src
+**** Comments
+#+begin_src latex
+  \begin{algorithmic}
+    \STATE do something \COMMENT{this ia a comment}
+  \end{algorithmic}
+#+end_src
+For comments on the same line with =\IF= etc. constructs, use the optional argument.
