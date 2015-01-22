@@ -1,0 +1,18 @@
+#+TITLE:       Thunderbird Notes
+#+AUTHOR:      Xiaolong Zhang
+#+EMAIL:       xlzhang@cs.hku.hk
+#+DATE:        2015-01-22 Thu
+#+URI:         /blog/%y/%m/%d/Thunderbird Notes
+#+KEYWORDS:    ThunderBird
+#+TAGS:        Thunderbird
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: Notes about my Thunderbird Configuration
+
+
+* Sync configuration file
+** profile default path for different OS
+1. Ubuntu: =/home/<user name>/.thunderbird/
+2. Windows:
+
+
