@@ -6,9 +6,12 @@
 #+KEYWORDS:    Machine Learning,notes
 #+TAGS:        Machine Learning,notes
 #+LANGUAGE:    en
-#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t tex:t
 #+DESCRIPTION: This is the notes when I'm learning Stanford Machine Learning on Coursera
-
+#+STARTUP: noinlineimages
+#+LATEX_HEADER: \usepackage{algorithmic}
+#+LATEX_HEADER: \usepackage{mathtools}
+#+HTML_MATHJAX: align:"center" mathml:t path:"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 * Info
 URL is https://class.coursera.org/ml-005/lecture
 
@@ -37,7 +40,7 @@ No knowledge is given.
 [[file:./images/screenshot-03.png]]
 **** Cocktail party problem
 [[file:./images/screenshot-04.png]]
-* Linear Regression
+* Linear Regression (Week 1)
 ** Model Representation
 Notations:
 1. \(m\) is Number of training examples.
@@ -82,7 +85,7 @@ Then let's come back to the original function, where we don't have the constrain
 ** Gradient Descent
 Now we have some function \(J(\theta_0,\theta_1)\) and we want to \(\underset{\theta_0,\theta_1}{\text{minimize}}J(\theta_0,\theta_1)\), we use *gradient descent* here, which
 1. Start with some \(\theta_0,\theta_1\),
-2. Keep changing \(\theta_0,\theta_1) to reduce \(J(\theta_0,\theta_1)\), until we hopefully end up at a minimum.
+2. Keep changing \(\theta_0,\theta_1\) to reduce \(J(\theta_0,\theta_1)\), until we hopefully end up at a minimum.
 
 To help understand gradient descent, suppose you are standing at one point on the hill, and you want to take a small step to step downhill as quickly as possible, then you would choose the deepest direction to downhill.
 [[file:./images/screenshot-07.png]]
@@ -91,4 +94,89 @@ You keep doing this until to get to a local minimum.
 
 But if you start with a different initial position, gradient descent will take you to a (very) different position.
 [[file:./images/screenshot-08.png]]
+*** Gradient Descent algorithm
+
+We use $a := b$ to represent *assignment* and \( a = b\) to represent *truth assertion*.
+
+
+
+#+header: :exports results :file test.png :results value raw file append
+#+header: :imagemagick yes :iminoptions -density 600  -trim :imoutoptions -geometry 400 
+#+header: :fit yes :headers '("\\usepackage{algorithmic}")
+#+begin_src latex
+\begin{algorithmic}
+\REPEAT
+\STATE $ \theta_j \coloneqq \theta_j - \alpha \frac{\partial}{\partial \theta_j} J(\theta_0,\theta_1) $ \COMMENT{for \(j = 0\) and \(j = 1\)}
+\UNTIL{convergence}
+\end{algorithmic}
+#+end_src
+
+
+The $\alpha$ here is called learning rate.
+
+Pay attention that when implementing gradient descent, we need to update all $\theta\text{s}$ simultaneous.
+[[file:./images/screenshot-10.png]]
+
+Recall that $\alpha$ is a called the learning rate, which is actually a scale factor to our step represented by the derivative term. Take a 1D case as an example, the derivative is the direction (slop of the tanget line) where the function value becomes larger, so we should take its negative as our step.
+[[file:./images/screenshot-11.png]]
+
+
+If $\alpha$ is too small, gradient descent can be slow. If $\alpha$ is too large, gradient can overshoot the minimum. It may fail to converge, or even diverge.
+[[file:./images/screenshot-12.png]]
+
+
+Gradient descent can converge to a local minimum, even with the learning rate $\alpha$ fixed. This is because as we approach a local minimum, gradient descent will automatically take smaller steps. So no need to descrease $\alpha$ over time.
+
+
+*Batch* Gradient descent:
+Each step of gradient descent uses all the training examples:
+* Linear Algebra (Week1, Optional)
+This lecture use 1-indexed subscripts.
+* Linear Regression with Multiple Variables (Week 2)
+** Multiple Features
+[[file:./images/screenshot-13.png]]
+Notation:
+1. number of features: \(n\)
+2. input (features) of \(i^{\text{th}}\) training example: \(x^{(i)}\)
+3. value of feature \(j\) in \(i^{th}\) training example. \(x^{(i)}_{j}\)
+
+Now our hypothesis is \(h_\theta (x) = \theta_0 + \theta_1 x_1 +  \theta_2 x_2 + \dots + \theta_n x_n \).
+For convenience of notation, define \(x_0 = 1\), or \(x^{(i)}_0 = 1\). So now we define our hypothesis as
+\begin{equation*}
+\begin{split}
+h_\theta (x) &= \theta_0 x_0 + \theta_1 x_1 +  \theta_2 x_2 + \dots + \theta_n x_n \\
+&= \theta x
+\end{split}
+\end{equation*}
+where \(\theta\) is a \(n+1\) dimension vector.
+** Gradient Descent for Multiple Variables
+So now our new algorithm becomes
+[[file:./images/screenshot-14.png]]
+Note that our new algorithm for $\theta_0$ is just like the old one since \(x_0^{(i)} \) is 1.
+** Gradient Descent in Practice - Feature Scaling.
+Idea: Make sure features are on a similar scale, then gradient descent will converge more quickly.
+
+Take a 2D example,  if the dimension of \(x_1\) is much larger than the dimension of \(x_2\), then the search region is a long ellipsis shape which is make gradient much difficult to find the minimum.
+[[file:./images/screenshot-15.png]]
+We can rescale all features to [0,1] so the contours now become a circle.
+[[file:./images/screenshot-16.png]]
+
+Usually we get every feature into approximately a \(-1 \leq x \leq 1\) range. But it need not to be exactly. Say \(-3 \leq x \leq 3 \) is OK.
+
+
+Mean normalization: Replace \(x_i\) with \(x_i - \mu_i\) to make features have approximately zero mean. Note that this does not apply to \(x_0 = 1\).
+** Gradient Descent in Practice - Learning Rate.
+To make sure gradient descent is working correctly, draw the figure the value of \(J(\theta)\) versus the number of iterations.
+[[file:./images/screenshot-17.png]]
+
+For sufficiently small \(\alpha\), \(J(\theta\) should decrease on every iteration. But if $\alpha$  is too small, gradient descent can converge too slow. To choose \(\alpha\) try \( \dots, 0.001, 0.003,0.01, 0.03,0.1, 0.3,1, \dots\), roughly a 3x larger.
+** Features and Polynomial Regression
+You need to choose a good feature instead of just using what you're provided. For example, for housing price prediction, you are provided with the frontage and depth feature, you can define a feature called area = frontage x depth.
+[[file:./images/screenshot-18.png]]
+
+Or sometimes use a polynomial function would be better. If the feature is not enough, you could use size, size^2, size^3 as features.
+[[file:./images/screenshot-18.pngng]]
+
+Or you can use square root as feature.
+[[file:./images/screenshot-20.png]]
 
