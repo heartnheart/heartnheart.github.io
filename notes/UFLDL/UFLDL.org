@@ -179,7 +179,6 @@ Or sometimes use a polynomial function would be better. If the feature is not en
 
 Or you can use square root as feature.
 [[file:./images/screenshot-19.png]]
-** Normal Equation
 How to find the minimum of \(J(\theta)\) analytically?
 
 By Calculus, we can take the partial derivatives of each variable, and set it to 0.
