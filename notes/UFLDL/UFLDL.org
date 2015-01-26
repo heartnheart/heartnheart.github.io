@@ -175,8 +175,29 @@ You need to choose a good feature instead of just using what you're provided. Fo
 [[file:./images/screenshot-18.png]]
 
 Or sometimes use a polynomial function would be better. If the feature is not enough, you could use size, size^2, size^3 as features.
-[[file:./images/screenshot-18.pngng]]
+[[file:./images/screenshot-18.png]]
 
 Or you can use square root as feature.
+[[file:./images/screenshot-19.png]]
+** Normal Equation
+How to find the minimum of \(J(\theta)\) analytically?
+
+By Calculus, we can take the partial derivatives of each variable, and set it to 0.
+
+Normal Equation:
+[[file:./images/screenshot-22.png]]
+Then we can compute $\theta = (X^T X)^{-1} X^T y$
+The Octave code is:
+#+begin_src octave
+  pinv(X' * X) * X' * y
+#+end_src
+Compare Gradient Descent with Normal Equation.
 [[file:./images/screenshot-20.png]]
+** Normal Equation and Noninvertbility (Optional)
+Use =pinv= in Octave should not be a problem.
+What if \(X^T X\) is non-invertible?
+1. Reduent features (linearyly dependant).
+   E.g. $x_1$ = size in feet, $x_2$ size in m^2.
+2. Too many features (e.g. $m \leq n).
+   Delete some features, or use regulariation.
 
