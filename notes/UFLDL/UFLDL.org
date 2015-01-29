@@ -200,3 +200,235 @@ What if \(X^T X\) is non-invertible?
 2. Too many features (e.g. $m \leq n).
    Delete some features, or use regulariation.
 
+
+
+* Octave Tutorial
+** Basic Operation
+#+begin_src octave :exports both :results output
+    5+6
+    3-2
+    5*8
+    1/2
+    2^6
+
+
+    1 == 2 %false
+    1 ~= 2 
+    1 && 0
+    1 || 0
+
+    xor(1,0) %XOR
+
+    PS1('>> '); % to change the prompt sign
+
+    a = 3; % semicolon supressing output
+    a
+
+    disp(a);
+    disp(sprintf('2 decimals: %0.2f', a))
+
+    a
+    format long
+    a
+    format short
+    a
+
+    A = [1 2; 3 4; 5 6]
+
+    A = [1 2
+         3 4
+         5 6]
+
+    v = [1 2 3]
+
+    v = 1:0.1:2
+
+    ones(2,3)
+
+    C = 2*ones(2,3)
+
+    C = [2 2 2; 2 2 2]
+
+    w = ones(1,3)
+    w = zeros(1,3)
+    w = rand(1,3)
+
+    rand(3,3)
+    rand(3,3)
+
+    w = randn(1,3) % guassian distribution
+
+    w = -6 + sqrt(10)*(randn(1,10000)); % you don't want to omit the semicolon here
+
+    hist(w)
+    hist(w,50)
+
+    eye(4) % identity matrix
+    I = eye(6)
+
+    help eye
+#+end_src
+
+#+begin_src octave :exports results :results file
+w = -6 + sqrt(10)*(randn(1,10000)); % you don't want to omit the semicolon here
+hist(w)
+print -dpng chart.png
+ans = "chart.png"
+
+#+end_src
+
+#+RESULTS:
+[[file:chart.png]]
+
+** Move data around
+#+begin_src octave :results output
+  A = [1 2; 3 5; 5 6]
+  size(A)
+  sz = size(A)
+  size(A,1)
+  v = [1 2 3 4]
+  length(v)
+  length(A)
+  length([1;2;3;4;5])
+  pwd
+  cd ..
+  ls
+  load('test.dat')
+  who
+  whos
+  save hello.mat v
+  save hello.txt v -ascii
+  clear
+  A = [1 2 ; 3 4; 5 6];
+  A(3,2)
+  A(:,2)
+  A([1 3], :)
+  A(:,2) = [10; 11; 12]
+  A = [A, [ 100, 101, 102]];
+  A(:) % put all elements of A into a single vector
+  A = [1 2; 3 4; 5 7];
+  B = [11 12; 13 14; 15 16];
+  C = [A B]
+  C = [A,B]
+  D = [A; B]
+#+end_src
+** Computing on Data
+#+begin_src octave
+  A = [1 2; 3 4; 5 6];
+  B = [11 12; 13 14; 15 16];
+  C = [11 12; 13 14]
+
+  A.*B
+  A.^2
+  v = [1; 2; 3]
+  1 ./ v
+  1 ./ A
+  log(v)
+  exp(v)
+  abs(v)
+  abs([-1; 2; -3])
+  -v
+  v + ones(length(v),1)
+  v + 1
+
+  A'
+  (A')'
+
+  a = [1 15 2 0.5]
+  val = max(a)
+  [val, ind] = max(a)
+  max(A)
+  a < 3
+  A = magic(3)
+  [r,c] = find(A >= 7)
+
+  sum(a)
+  prod(a)
+  floor(a)
+  ceil(a)
+
+  max(A,[],1) % colomn wise max
+  max(A,[],2) % row wise max
+  max(A)
+  max(max(A))
+  max(A(:)) % find max of all the elements
+
+  A = magic(9)
+  sum(A,1) % column wise sum
+
+  sum(sum(A .* (eye(9)))) % sum the diagonal values
+  sum(sum(A .*flipud(eye(9)))) % sum the subdiagonal values
+
+  pinv(A)                         # sudo inverse
+  temp = pinv(A)
+  temp * A
+
+#+end_src
+** Plotting Data
+#+begin_src octave
+  t = [0:0.01:0.98];
+  y1 = sin(2*pi*4*t);
+  plot(t,y1);
+  y2 = cos(2*pi*4*t);
+  plot(t,y2);
+
+  plot(t,y1);
+  hold on;
+  plot(t,y2,'r');
+  xlabel('time');
+  ylabel('value');
+  legend('sin','cos');
+  title('my plot');
+  print -dpng 'myPlot.png'
+  close
+
+
+  figure(1); plot(t,y1);
+  figure(2); plot(t,y2);
+
+  subplot(1,2,1)% divides plot into a 1x2 grid, access first element
+  plot(t,y1);
+  subplot(1,2,2);
+  plot(t,y2);
+  axis([0.5 1 -1 1]) % change horizontal range to [0.5,1] and vertical to [-1,1]
+
+  A = magic(5)
+  imagesc(A)
+  imagesc(A), colorbar, colormap gray; % use comma for command chainning, for ouput, which is different from semicolon
+#+end_src
+
+#+RESULTS:
+** Control Statements
+#+begin_src octave
+  v = zeros(10,1)
+  for i = 1:10,
+      v(i) = 2^i;
+  end;
+
+  i = 1;
+  while i <= 5,
+        v(i) = 100;
+  end
+
+
+  i = 1;
+  while true,
+        v(i) = 999;
+        i = i + 1;
+        if( i == 6),
+          break;
+        end;
+  end;
+#+end_src
+** Vectorizatrion
+
+$h_\theta(x) = \sum_{j=0}^{n} \theta_j x_j = \theta^T x$
+#+begin_src octave
+%unvectorized implemenetation
+  predictaion = 0.0;
+  for j = 1;n+1,
+      prediction = prediction + theta(j) * x(j)
+  end;
+  %vectorized implementation
+  prediction = thteta' * x;
+#+end_src
