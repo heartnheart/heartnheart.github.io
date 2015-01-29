@@ -1,0 +1,11 @@
+#+TITLE:       Algorithms
+#+AUTHOR:      Xiaolong Zhang
+#+EMAIL:       xlzhang@cs.hku.hk
+#+DATE:        2015-01-29 Thu
+#+URI:         /blog/%y/%m/%d/Algorithms
+#+KEYWORDS:    Algorithms,notes
+#+TAGS:        notes
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: Notes about my learning Algorithms on Coursera
+d
