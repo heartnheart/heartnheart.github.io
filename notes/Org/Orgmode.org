@@ -13,3 +13,6 @@
 * Things learned from mailing list
 ** =C-c C-x c= or =(org-clone-subtree-with-time-shift)=
 This function is useful to create a number of lectures to prepare or courses to have. It clone a subtree by making a number of sibling copies of it. You will be prompted for the number of copies to make, and you can also specify if any timestamps in the entry should be shifted.
+** How to put double or single quote inside code or verbatim markup
+Put a *Zero Width Non-Break Space* character using =C-x 8 RET 200b RET=
+
