@@ -1,0 +1,12 @@
+#+TITLE:       Python Notes
+#+AUTHOR:      Xiaolong Zhang
+#+EMAIL:       xlzhang@cs.hku.hk
+#+DATE:        2015-01-30 Fri
+#+URI:         /blog/%y/%m/%d/Python Notes
+#+KEYWORDS:    Python,notes
+#+TAGS:        Python,notes
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: Notes about python
+
+* dLearning Python the hard way (3rd)
