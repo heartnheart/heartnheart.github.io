@@ -8,4 +8,25 @@
 #+LANGUAGE:    en
 #+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
 #+DESCRIPTION: Notes about my learning Algorithms on Coursera
-d
+* Welcome to Algorithms, Part I (Week 0)
+There is a course overview:
+[[file:./images/screenshot-01.png]]
+* Union Find problem
+** Steps to developing a useable algorithm
+1. Model the problem
+2. Find an algorithm to solve it.
+3. Fast enough? Fits in memory?
+4. If not, figure out why.
+5. Find a way to address the problem.
+6. Iterate until satisfied.
+** Dynamic onnectivity
+Given a set of N objects:
+1. =Union command*: connect two objects.
+2. =Find/connected query=: is there path connecting the two objects?
+** Modeling the connections
+We assume "is connected to" is an equivalence relation:
+1. Reflexive
+2. Symmetric
+3. Transitive.
+** Connected Components
+Maximal =set= of objects that are mutually
