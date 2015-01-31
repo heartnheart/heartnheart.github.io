@@ -4,10 +4,38 @@
     <title>org-page</title>
     <link>http://heartnheart.github.io/</link>
     <description>static site generator</description>
-    <pubDate>Thu, 22 Jan 2015 22:32:05 HKT</pubDate>
-    <lastBuildDate>Thu, 22 Jan 2015 22:32:05 HKT</lastBuildDate>
+    <pubDate>Sat, 31 Jan 2015 20:03:03 HKT</pubDate>
+    <lastBuildDate>Sat, 31 Jan 2015 20:03:03 HKT</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
+    <item>
+      <title>Python Notes</title>
+      <link>http://heartnheart.github.io/blog/2015/01/30/Python Notes</link>
+      <description>Notes about python</description>
+      <pubDate>2015-01-31</pubDate>
+      <guid>http://heartnheart.github.io/blog/2015/01/30/Python Notes</guid>
+    </item>
+    <item>
+      <title>Algorithms</title>
+      <link>http://heartnheart.github.io/blog/2015/01/29/Algorithms</link>
+      <description>Notes about my learning Algorithms on Coursera</description>
+      <pubDate>2015-01-30</pubDate>
+      <guid>http://heartnheart.github.io/blog/2015/01/29/Algorithms</guid>
+    </item>
+    <item>
+      <title>Orgmode Notes</title>
+      <link>http://heartnheart.github.io/blog/2015/01/27/Orgmode Notes</link>
+      <description>Notes about orgmode</description>
+      <pubDate>2015-01-30</pubDate>
+      <guid>http://heartnheart.github.io/blog/2015/01/27/Orgmode Notes</guid>
+    </item>
+    <item>
+      <title>Stanford Machine Learning Notes</title>
+      <link>http://heartnheart.github.io/blog/2015/01/16/Stanford Machine Learning Notes</link>
+      <description>This is the notes when I&#39;m learning Stanford Machine Learning on Coursera</description>
+      <pubDate>2015-01-29</pubDate>
+      <guid>http://heartnheart.github.io/blog/2015/01/16/Stanford Machine Learning Notes</guid>
+    </item>
     <item>
       <title>LaTeX notes</title>
       <link>http://heartnheart.github.io/blog/2015/01/21/LaTeX notes</link>
@@ -21,13 +49,6 @@
       <description>Notes about my Thunderbird Configuration</description>
       <pubDate>2015-01-22</pubDate>
       <guid>http://heartnheart.github.io/blog/2015/01/22/Thunderbird Notes</guid>
-    </item>
-    <item>
-      <title>Stanford Machine Learning Notes</title>
-      <link>http://heartnheart.github.io/blog/2015/01/16/Stanford Machine Learning Notes</link>
-      <description>This is the notes when I&#39;m learning Stanford Machine Learning on Coursera</description>
-      <pubDate>2015-01-21</pubDate>
-      <guid>http://heartnheart.github.io/blog/2015/01/16/Stanford Machine Learning Notes</guid>
     </item>
     <item>
       <title>English</title>
@@ -56,27 +77,6 @@
       <description>Describe how to sync internet time in Ubuntu in HKUCS</description>
       <pubDate>2015-01-15</pubDate>
       <guid>http://heartnheart.github.io/blog/2015/01/15/HKUCS Ubuntu同步系统时间</guid>
-    </item>
-    <item>
-      <title>Emacs Lisp</title>
-      <link>http://heartnheart.github.io/blog/2015/01/14/Emacs Lisp</link>
-      <description>My Manual for Emacs Lisp</description>
-      <pubDate>2015-01-15</pubDate>
-      <guid>http://heartnheart.github.io/blog/2015/01/14/Emacs Lisp</guid>
-    </item>
-    <item>
-      <title>Title</title>
-      <link>http://heartnheart.github.io/blog/2015/01/13/Title</link>
-      <description>Description</description>
-      <pubDate>2015-01-13</pubDate>
-      <guid>http://heartnheart.github.io/blog/2015/01/13/Title</guid>
-    </item>
-    <item>
-      <title>Post 2</title>
-      <link>http://heartnheart.github.io/blog/2015/01/13/Post 2</link>
-      <description>Post 2 for testing file linking</description>
-      <pubDate>2015-01-13</pubDate>
-      <guid>http://heartnheart.github.io/blog/2015/01/13/Post 2</guid>
     </item>
   </channel>
 </rss>
