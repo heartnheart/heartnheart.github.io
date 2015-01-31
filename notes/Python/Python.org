@@ -9,4 +9,475 @@
 #+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
 #+DESCRIPTION: Notes about python
 
-* dLearning Python the hard way (3rd)
+* Learning Python the hard way (3rd)
+Digital downloads and paper versions can be purchased. The free HTML version is available at [[http://learnpythonthehardway.org/book]]
+
+This book call the *hard* way because it uses a technique called the *instruction*, where you are told to a sequcence of controlled exercises desinged to build a skill through repetition. For beginners who know nothing *but need to acquire before they can understand more complex topics*.
+** The Hard Way is Easier
+With the help of the book, you will do the incredibly simple things that all programmers do to learn a programming languages:
+1. Go though each exercies.
+2. Type in each sample exactly.
+3. Make it run.
+
+This book's job it to teach you the three basic skills that a beginning programmer needs to know: =reading and writing=, =attention to detail, and =spotting differences=.
+*** Do Not Copy-Paste
+You must *type* each of these exercises in, *manually*. If you copy and paste, you might as well not even do them. The point of these exercises is to train you hands, your brain, and your mind in how to read, write and see code. *If you copy-paste, you are cheating youself out of the effecitveness of the lessons*.
+** Exercise 0: The Setup
+Basic setup, nothing new.
+** Exercise 1: A Good First Program
+Type a lot of =print= statements
+** Exercise 2: Comments and Pound Characters
+The comment sign in Python is =#=.
+** Exercise 3: Numbers and Math
+Common math operators in Python
+#+begin_example
++ - * / % < > <= >=
+#+end_example
+Note that =/= stands for integer division. Use floating number if need.
+** Exercise 4: Variables And Names
+Use =﻿=﻿= to create a variable.
+** Exercise 5: More Variables and Printing
+Use =%= to create string with symbols
+#+begin_src python
+name = "Michael"
+age = 10
+weight = 10
+print "My name is %s" % name
+print "My age is %d and weight is %d" % (age, weight)
+#+end_src
+** Exercise 6: Strings and Text
+String is made by puttting either =﻿"﻿= double-quotes or =​'​= (single-quote) around text.
+** Exercise 7: More Printing
+#+begin_src python
+  print '.' * 10                  # will print 10 dot characters
+
+  print "A String",               # The comma would make this two line
+                                  # as one line output, to avoid a line
+                                  # logner than 80 characters
+  print "Another String"
+#+end_src
+** Exercise 8: Printing, Printing
+Nothing new
+** Exercise 9: Printing, Printing, Printing
+=​"""​= is used to create multiple ilne of strings.
+** Exercise 10: What Was That?
+Escape character like =\n=, =\'​=, =\"﻿=.
+** Exercise 11: Asking Questions
+Use =raw_input()= to ask input from user.
+#+begin_src python
+  print "How old are you?",
+  age = raw_input()
+  print "You are %r old", age
+#+end_src
+** Exercise 12: Prompting People
+=raw_input()= accepts a parameter for prompting.
+#+begin_src python
+  age = raw_input("how old are you?")
+  print "you are %r old", age
+#+end_src
+** Exercise 13: Parameters, Unpacking, Variables
+#+begin_src python
+from sys import argv
+script, first, second, third = argv
+print "The script is called:", script
+print "Your first variable is:", first
+print "Your second variable is:", second
+print "Your third variable is:", third
+#+end_src
+** Exercise 14: Prompting and Passing
+Nothing new.
+** Exercise 15: Reading Files
+Use =open= to create a =file= object, and use the =read= function of that object to get the content of file.
+#+begin_src python
+filename = 'test.txt'
+txt = open(filename)
+print txt.read()
+#+end_src
+Note that Python *will not* restrict you from opening a file more than once and sometimes this is necessary.
+** Exercise 16: Reading and Writing Files
+Here is alist of commands that need remember:
+1. =close= -- Close the file.
+2. =read= -- Reads the contents of the file. You can assign the result to a variable.
+3. =readline= -- Reads just one line of a text file.
+4. =truncate= -- Empties the file. Watch out if you care about the file.
+5. =write('stuff')= Writes "stuff" to the file.
+
+#+begin_src python
+from sys import argv
+script, filename = argv
+
+print "We're going to erase %r." % filename
+print "If you don't want that, hit CTRL-C (^C)."
+print "If you do want that, hit RETURN."
+
+raw_input("?")
+
+print "Opening the file..."
+target = open(filename, 'w')
+
+print "Truncating the file. Goodbye!"
+target.truncate()
+
+print "Now I'm going to ask you for three lines."
+
+line1 = raw_input("line1: ")
+line2 = raw_input("line2: ")
+line3 = raw_input("line3: ")
+
+print "I'm going to write these to the file."
+
+target.write(line1)
+target.write("\n")
+target.write(line2)
+target.write("\n")
+target.write(line3)
+target.write("\n")
+
+print "And finally, we close it."
+target.close()
+
+#+end_src
+** Exercise 17: More Files
+Learn to how to copy a file. The =exists= function get by =from os.path import exists= can determine whether a file exists. The =len= function returns the number of items in a sequence.
+
+#+begin_src python
+  from sys import argv
+  from os.path import exists
+
+  script, from_file, to_file = argv
+
+  print "Copying from %s to %s" % (from_file, to_file)
+
+  # we could do these two on one line, how?
+  in_file = open(from_file)
+  indata = in_file.read()
+
+  print "The input file is %d bytes long" % len(indata)
+
+  print "Does the output file exist? %r" % exists(to_file)
+  print "Really, hit RETURN to continue, CTRL-C to abort."
+  raw_input()
+
+  out_file = open(to_file, 'w')
+  out_file.write(indata)
+
+  print "Alright, all done."
+
+  out_file.close()
+  in_file.close()
+
+#+end_src
+** Exercise 18: Names, Variables, Code, Functions
+Learn how to define a function in Python
+1. start with =def= keyword.
+2. give the function name and arguments inside the parentheses.
+3. Remember to end the first line with =):=
+4. Then start indenting and type what you want.
+
+If you want to pack all the arguments inside one variable, use =*arg=.
+#+begin_src python
+# This one is like your scripts with argv
+def print_two(*args):
+    arg1, arg2 = args
+    print "arg1: %r, arg2: %r" % (arg1, arg2)
+
+
+# ok, that *args is actually pointless, we can just do this
+def print_two_again(arg1, arg2):
+    print "arg1: %r, arg2: %r" % (arg1, arg2)
+
+
+# this just takes one argument
+def print_one(arg1):
+    print "arg1: %r" % arg1
+
+
+# this one takes no argument
+def print_none():
+    print "I got nothin'."
+
+
+print_two("Zed", "Shaw")
+print_two_again("Zed", "Shaw")
+print_one("First!")
+print_none()
+
+
+#+end_src
+** Exercise 19: Functions and Variables
+Just need to know that when you declare a variable inside a function, you can not use it outside the funciton scope.
+** Exercise 20: Functions and Files
+Nothing new.
+** Exercise 21: Functions Can Return Something
+Add return statement at the end of =def= funciton could return a value. Note that if you return nothing. A =NoneType= would be returned.
+#+begin_src python
+  def add(a, b):
+      print "ADDING %d + %d" % (a, b)
+      return a + b
+#+end_src
+** Exercise 22: What Do You Know So Far?
+A Review, nothing new.
+** Exercise 23: Read Some Code
+Find some code on github etc to read, nothing new.
+** Exercise 24: More Practice
+Nothing new.
+** Exercise 25: Even More Practice
+Nothing new.
+** Exercise 26: Congratulations, Take a Test!
+Nothing new.
+** Exercise 27: Memorizing Logic
+Python has the following truth terms:
+1. =and=
+2. =or=
+3. =not=
+4. =﻿!=﻿=
+5. =﻿=﻿=﻿=
+6. =﻿>=﻿=
+7. =﻿<=﻿=
+8. =True=
+9. =False=
+** Exercise 28: Boolean Practice
+Python will return one of the operands to their boolean expression rather than just =Ture= or =False=. This means that if you did =False and 1=, you get the first operand (=False=) but if you do =True and 1=, you get the second (=1=).
+** Exercise 29: What If
+#+begin_src python
+  if a < b:
+      print "a < b"
+#+end_src
+** Exercise 30: Else and If
+#+begin_src python
+
+if cars > people:
+    print "We should take the cars."
+elif cars < people:
+    print "We should not take the cars."
+else:
+    print "We can't decide."
+#+end_src
+** Exercise 31: Making Decisions
+Nothing new.
+** Exercise 32: Loops and Lists
+Note that =range(1,3)= will return =[1, 2]=.
+#+begin_src python
+the_count = [1, 2, 3, 4, 5]
+fruits = ['apples', 'oranges', 'peers', 'apricots']
+change = [1, 'pennies', 2, 'dimes', 3, 'quarters']
+
+# this first kind of for-loop goes through a list
+for number in the_count:
+    print "This is count %d" % number
+
+# same as above
+for fruit in fruits:
+    print "A fruit of type: %s" % fruit
+
+# also we can to through mixed lists too
+# notice we have to use %r since we don't know what's in it
+for i in change:
+    print "I got %r" % i
+
+# we can also build lists, first start with an empty one
+elements = []
+
+# then use the range function to do 0 to 5 counts
+for i in range(0, 6):
+    print "Adding %d to the list." % i
+    # append is a function that lists understand
+    elements.append(i)
+
+# now we can print them out too
+for i in elements:
+    print "Element was: %d" % i
+
+#+end_src
+** Exercise 33: While Loops
+#+begin_src python
+i = 0
+numbers = []
+
+while i < 6:
+    print "At the top i is %d" % i
+    numbers.append(i)
+
+    i = i + 1
+    print "Numbers now: ", numbers
+    print "At the bottom i is %d" % i
+
+print "The numbers: "
+for num in numbers:
+    print num
+#+end_src
+** Exercise 34: Accessing Elements of Lists
+When accessing the first element in a list, use 0 as index.
+#+begin_src python
+animals = ['bear', 'tiger', 'penguin', 'zebra']
+bear = animals[0]
+#+end_src
+** Exercise 35: Branches and Functions
+Nothing new.
+** Exercise 36: Designing and Debugging
+Nothing new.
+** Exercise 37: Symbol Review
+This page is a good reference for Python symbol. http://learnpythonthehardway.org/book/ex37.html
+** Exercise 38: Doing Things to Lists
+When Python calling a function, it passes the variable as the first argument to the function.
+#+begin_src python
+ten_things = "Apples Oranges Crows Telephone Light Sugar"
+
+print "Wait there are not 10 things in that list. Let's fix that."
+
+stuff = ten_things.split(' ')
+
+more_stuff = ["Day", "Night", "Song", "Frisbee", "Corn", "Banana",
+              "Girl", "Boy"]
+
+while len(stuff) != 10:
+    next_one = more_stuff.pop()
+    print "Adding: ", next_one
+    stuff.append(next_one)
+    print "There are %d items now." % len(stuff)
+
+
+print "There we go: ", stuff
+
+print "Let's do some things with stuff."
+
+print stuff[1]
+print stuff[-1]
+print stuff.pop()
+print ' '.join(stuff)
+print '#'.join(stuff[3:5])
+#+end_src
+** Exercise 39: Dictionaries, Oh Lovely Dictionaries
+With dictionaries (hashes in other languages), you can use anyting as index.
+Besides, we implement a dictionary using list in this exercies.
+#+begin_src python
+  # create a mapping of state to abbreviation
+  states = {
+      'Oregon': 'OR',
+      'Florida': 'FL',
+      'California': 'CA',
+      'New York': 'NY',
+      'Michigan': 'MI'
+  }
+
+  # create a basic set of states and some cities in them
+  cities = {
+      'CA': 'San Francisco',
+      'MI': 'Detroit',
+      'FL': 'Jacksonville'
+  }
+
+
+  # add some more cities
+  cities['NY'] = 'New York'
+  cities['OR'] = 'Portland'
+
+  # print out some cities
+  print '-' * 10
+  print "NY State has: ", cities['NY']
+  print "OR State has: ", cities['OR']
+
+  # print some states
+  print '-' * 10
+  print "Michigan's abbreviation is: ", states['Michigan']
+  print "Florida's abbreviation is: ", states['Florida']
+
+  # do it by using the state then cities dict
+
+  print '-' * 10
+  print "Michigan has: ", cities[states['Michigan']]
+  print "Florida has: ", cities[states['Florida']]
+
+  # print every state abbreviation
+  print '-' * 10
+  for state, abbrev in states.items():
+      print "%s is abbreviated %s" % (state, abbrev)
+
+  # print every city in state
+  print '-' * 10
+  for abbrev, city in cities.items():
+      print "%s has the city %s" % (abbrev, city)
+
+  # now do both at the same time
+  print '-' * 10
+  for state, abbrev in states.items():
+      print "%s state is abbreviated %s and has city %s" % (
+          state, abbrev, cities[abbrev])
+
+  print '-' * 10
+  # safely get a abbreviation by state that might not be there
+  state = states.get('Texas')
+
+  if not state:
+      print "Sorry, no Texas"
+
+  # get a city with a default value
+  city = cities.get('TX', 'Does Not Exist')
+  print "The city for the state 'TX' is: %s" % city
+
+#+end_src
+** Exercise 40: Modules, Classes, and Objects 
+A module is just like a dictionary, but with different syntax. A class is like a module, but you can create a lot of instances of them.  Creating an object form a class is just like *import* a module.
+
+Three ways to get things from things:
+#+begin_src python
+  # dict style
+  mystuff['apples']
+
+  # module style
+  mystuff.apples()
+  print mystuff.tangerine
+
+  # class style
+  thing = MyStuff()
+  thing.apples()
+  print thing.tangerine
+#+end_src
+
+In Python class, if you want to access a class member variable (attribute), you must use =self=, which is different from Java.
+A First Class Example:
+#+begin_src python
+class Song(object):
+
+    def __init__(self, lyrics):
+        self.lyrics = lyrics
+
+    def sing_me_a_song(self):
+        for line in self.lyrics:
+            print line
+
+happy_bday = Song(["Happy birthday to you",
+                   "I dont' want to get sued",
+                   "So I'll stop right there"])
+
+bulls_on_parade = Song(["They rally around tha family",
+                        "With pockets full of shells"])
+
+happy_bday.sing_me_a_song()
+
+bulls_on_parade.sing_me_a_song()
+
+#+end_src
+** Exercise 41: Learning To Speak Object Oriented
+This exercise give an example code on creating a drill test
+Use =result = sentence[:]= to copy a list.
+** Exercise 42: Is-A, Has-A, Objects, and Classes
+Talks about OOP concepts.
+
+There is new-style class and old-style class in Python. Just stick to the new style one.
+
+** Exercise 43: Basic Object-Oriented Analysis and Design
+A game example on how to design in OOP.
+** Exercise 44: Inheritance Versus Composition
+When you do inheritance,  there are three ways that the parent and child classes can interact:
+1. Actions on the child *imply* an action on the parent.
+2. Actions on the child *override* an action on the parent.
+3. Actions on the child *alter* the action on the parent.
+
+Try to avoid inheritance, especially multi-inheritance. Common sense fo OOP.
+A style guid for python: https://www.python.org/dev/peps/pep-0008/
+** Exercise 45: You Make a Game
+Some coding style:
+Use "camel case" fo class names and "underscore format" for other functions.
+** Exercise 46: A Project Skeleton
+How to setup a project skeleton for testing
