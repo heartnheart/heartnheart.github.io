@@ -480,4 +480,11 @@ A style guid for python: https://www.python.org/dev/peps/pep-0008/
 Some coding style:
 Use "camel case" fo class names and "underscore format" for other functions.
 ** Exercise 46: A Project Skeleton
-How to setup a project skeleton for testing
+How to setup a project skeleton for testing.
+** Exercise 47: Automated Testing
+** Exercise 48: Advanced User Input
+Test First is a programming tactic where you write an automated test that pretends the code works, then you write the code to make the test actuall work. This method works well when you can't visualize how the code is implemented, but you can imagine how you have to work with it.
+*** What is =__init__.py= for?
+The =__init__.py= file are required to make Python treat the directories as containing packages.
+*** What is =setup.py= for?
+Usually we put the setup script inside =setup.py= file. It's the centre of all activity in building, distributing, and installing modules using Distutils. 
