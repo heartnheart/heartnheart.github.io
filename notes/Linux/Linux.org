@@ -1,0 +1,3 @@
+* Ubuntu 
+** Open location bar in Nautilus
+Use =Ctrl L=.
