@@ -1,0 +1,49 @@
+#+TITLE:       Emacs Notes
+#+AUTHOR:      Xiaolong Zhang
+#+EMAIL:       xlzhang@cs.hku.hk
+#+DATE:        2015-02-09 Mon
+#+URI:         /blog/%y/%m/%d/Emacs Notes
+#+KEYWORDS:    Emacs,notes
+#+TAGS:        Emacs,notes
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: This file is the notes I take to understand emacs
+
+* Emacs Manual
+** 48 Emacs Lisp Packages
+Emacs package system allows you to downloads, install, uninstall and upgrade packages that add additional features.
+1. =M-x list-packages= brings a buffer named =*Packages*= with a list of all packages.
+2. The command =C-h P (describe-package)= prompts for the name of the package, and displays a help buffer describing the attributes of the package and the features that it implements.
+*** The Package menu buffer
+This buffer lists all the packages that Emacs know about, one on each line, with the following information:
+1. The package name.
+2. The package's version number.
+3. The package's status: =available= (can be downloaded from the package archive), =installed=, =built-in= (included in Emacs by default), or =new= (equivalent to =available=, but this package becomes newly available on the package archive after your last invocation of =M-x list-packages=), =held= (held in =package-load-list=), =disabled=, =obsolete=.
+4. A short description of the package.
+
+
+The =list-package= command access the network, to retrieve the list of all available packages from the package archive server. If the network is unavailable, it falls back on the most recent retrieved list.
+
+Possible commands:
+1. =h (package-menu-quick-help)= Print a short message summarizing how to use the package menu buffer.
+2. =?= or =<RET>= =(package-menu-describe-package=, display a help buffer for the package in the current line. Similar to =C-h P=.
+3. =i (package-menu-mark-install)=. Mark the package on the current line for installation, which will add an =I= character to the start of the line if the package status is =available=.
+4. =d (package-menu-mark-delete)=. Mark the package on the current line for deletion, which will add a =D= character to the start of the line if the package status is =installed=.
+5. =u (package-menu-mark-unmark)=. Clear any mark on the current line and move to next line.
+6. =U (package-menu-mark-upgrades)=. Place =I= flag for the newr version and =D= flag for the old installed version.
+7. =x (package-menu-execute)=. Download and install all the packages marked with =I= *and their dependencies*, delete all teh packages marked with =D=. This also removes the marks.
+8. =r (package-menu-refresh)=. Refresh the package list by fetching the list of available packages from package archive again.
+9. =f (package-menu-filter)=. Prompts a *keyword*, then shows only the packages that relate to that keyword. To retore the full package list, type =q=.
+*** Package Installation
+1. A package's requirements list is shown in its help bufer.
+2. =package-archives= variable is a list of packages archives with each element of the form =(id . location)=, where =id= is the name of a package archive and =location= is the HTTP address or directory naem of the package archive.
+3. =package-pinned-archive= variable to ensure that specified package is only ever downloaded from the specified archive.
+4. Emacs will automatically load installed packages at startup, after processing the init file. As an exception, emacs don't do this if invoked with =-q= or =--no-init-file=. To disable automatic package loading, use =package-enable-at-startup= variable.
+5. The reason why automatic package loading occurs after loading the init file is that *user options only receive theri customized values after loading the init file*, including user options affecting the package system. If you want to load packages expicitly in your init file (usually because some other code in your init file depends on a package), you can call =package-initialize= function, but change =package-enable-at-startup= to =nil= to avoid loading the packages again after processing the init file.
+6. Use =package-load-list= to control which package to load.
+*** Package files and Directory Layout
+1. Each package is either a single Elisp source file or a tar file containing mulple Emacs lisp source and other files.
+2. Use =package-install-file= to install a package from a file directly.
+3. Contents of a packages are install in subdirectory of =package-user-dir=, which defaults to =~/.emacs.d/elpa/=. The subdirectory is named =name-version=, where =name= is the package name and =version= is its version string.
+4. =package-directory-list= variable defines system-wide packages Emacs look for. They have the same subdirectory layout.
+5. Deleting a package will delete the corresponding package subdirectory as well, but will only apply for package installed in =package-user-dir=.
