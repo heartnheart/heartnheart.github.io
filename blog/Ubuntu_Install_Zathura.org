@@ -102,4 +102,7 @@ zathura needs Sphinx to build man pages, use
 sudo apt-get install python-sphinx
 #+end_src
 ** How to use inverse search
+Either use emacs daemon or emacs server so that emacsclient is useable.
+Then configure Emacs based on [[http://tex.stackexchange.com/questions/207889/how-to-set-up-forward-inverse-searches-with-auctex-and-zathura][this post]]. Remember to install wmctrl for that.
+
 By Control + Click
