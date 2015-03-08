@@ -432,3 +432,29 @@ $h_\theta(x) = \sum_{j=0}^{n} \theta_j x_j = \theta^T x$
   %vectorized implementation
   prediction = thteta' * x;
 #+end_src
+
+
+
+ 
+* Logistic Regression (Week 3)
+** Classification (8min)
+Applying linear regression to a classification problem is not a good idea.
+[[file:./images/screenshot-23.png]]
+
+You can use 0.5 as a threshhold to do the prediction based on the h_\theta(x)
+value. However, this is not a good idea since when adding a new sample point,
+the hypothesis will change. Besides, the return value for h_\theta(x) could be
+not in the range [0, 1], thus making the prediction rather confusing. Logistic
+Regression, though the word regression, is used to do the classification job and
+the hypothesis can be guaranteed in the range [0,1].
+[[file:./images/screenshot-24.png]]
+** Hypothesis Representation 
+*** Logistic Regression Model
+We set $h_\theta(x) = g(\theta^Tx)$, where $g(z) = \frac{1}{1+e^{-z}}$. The $g$
+function is called *Sigmoid function* as well as *Logistic function*.
+[[file:./images/screenshot-25.png]]
+*** Interpretation of Hypothesis Output
+You can think of $h_\theta(x)$ as the estimated probability that $y = 1$ on
+input $x$.
+[[file:./images/screenshot-26.png]]
+** Decision Boundary
