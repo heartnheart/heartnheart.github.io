@@ -458,3 +458,10 @@ You can think of $h_\theta(x)$ as the estimated probability that $y = 1$ on
 input $x$.
 [[file:./images/screenshot-26.png]]
 ** Decision Boundary
+It's a line that separates the regions where the hypothesis predicts 1 or 0.
+
+Since $g(z) \geq 0.5$ when $z \geq 0.5$, which means that $h_\theta(x) \geq 0.5$ whenever
+$\theta^{T} x \geq 0$
+** Cost Function
+We define the cost function as below since $h_\theta(x)$ is in the range [0,1].
+[[file:./images/screenshot-27.png]]
