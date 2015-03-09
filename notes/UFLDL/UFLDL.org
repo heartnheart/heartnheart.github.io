@@ -518,3 +518,67 @@ When using normal equation:
 ** Regularized Logistic Regression
 Now update \theta_0 separately
 [[file:./images/screenshot-45.png]]
+* Neural Networks: Representation
+** Non-linear Hypotheses
+Use quadratic features will results in a lot of features.
+[[file:./images/screenshot-46.png]]
+** Neurons and the Brain
+There is one learning algorithm of the brain
+** Model Representation I
+Neuron model: Logistic unit
+[[file:./images/screenshot-47.png]]
+
+Neural Network is a group of this neural.
+[[file:./images/screenshot-48.png]]
+
+
+[[file:./images/screenshot-49.png]]
+** Model Representation II
+Forward propagation: Vectorized implementation
+[[file:./images/screenshot-50.png]]
+
+Bias unit:
+[[file:./images/screenshot-51.png]]
+
+The last layer is like Logistic Regression, but Neural Network learning its own
+features.
+[[file:./images/screenshot-52.png]]
+** Examples and Intuitions I
+OR Function
+[[file:./images/screenshot-53.png]]
+** Examples and Intuitions II
+NOT Function
+[[file:./images/screenshot-54.png]]
+
+The input layer has only x_1 and x_2. The second layer compute the feature (x_1 AND x_2), and the feature (NOT x_1) AND (NOT x_2). The third layer use the feature computed in layer 2 and do an OR operation to simulates a XNOR operation.
+[[file:./images/screenshot-55.png]]
+
+
+Handwritten digit classification
+[[file:./images/screenshot-56.png]]
+** Mutilcass Classification
+Use an extension of the One-vs-all method.
+[[file:./images/screenshot-57.png]]
+* Neural Networks: Learning (Week 5)
+** Cost Function
+[[file:./images/screenshot-58.png]]
+
+This is the cost function
+[[file:./images/screenshot-59.png]]
+** Backpropagation Algorithm
+Forward Propagation, computing all the activations:
+[[file:./images/screenshot-60.png]]
+
+Backpropagation algorithm, computing the gradient:
+[[file:./images/screenshot-61.png]]
+
+[[file:./images/screenshot-62.png]]
+
+The name "back" comes from the order we compute the "error"
+Backpropagation algorithm
+[[file:./images/screenshot-63.png]]
+** Backpropagation Intuition
+
+[[file:./images/screenshot-64.png]]
+[[file:./images/screenshot-65.png]]
+** Implementation Notes Unrolling Parameters
