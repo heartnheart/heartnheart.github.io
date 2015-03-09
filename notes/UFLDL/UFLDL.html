@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Stanford Machine Learning Notes</title>
+<!-- 2015-01-26 Mon 22:45 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Xiaolong Zhang" />
+<meta  name="description" content="This is the notes when I'm learning Stanford Machine Learning on Coursera"
+ />
+<meta  name="keywords" content="Machine Learning,notes" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css"
+href="http://sachachua.com/blog/wp-content/themes/sacha-v3/foundation/css/foundation.min.css"></link>
+<link rel="stylesheet" type="text/css" href="http://sachachua.com/org-export.css"></link>
+<link rel="stylesheet" type="text/css" href="http://sachachua.com/blog/wp-content/themes/sacha-v3/style.css"></link>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+            config: ["MMLorHTML.js"], jax: ["input/TeX"],
+        //  jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<a name="top" id="top"></a>
+</div>
+<div id="content">
+<h1 class="title">Stanford Machine Learning Notes</h1>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Info</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+URL is <a href="https://class.coursera.org/ml-005/lecture">https://class.coursera.org/ml-005/lecture</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Introduciton</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">What is machine learning</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Arthur Samuel (1959): <b>Field of study of that gives computers the ability to learn without being explicitly programmed.</b> 
+</li>
+<li>Tom Mitchel (1998): A Well-posed Learning Problem is *A computer program is said to learn from experience E with repsect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2">Machine learning algorithms:</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+We mainly talks about <b>two types of algorithm</b>:
+</p>
+<ul class="org-ul">
+<li>Supervised Learning
+</li>
+<li>Unsupervised Learning
+</li>
+<li>Others: Reinforcement Learning, Recommender System.
+</li>
+</ul>
+<p>
+And <b>Practical advice for applying learning algorithm</b>
+</p>
+</div>
+<div id="outline-container-sec-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1">Supervised Learning</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+"Right Answers" are given. 
+</p>
+</div>
+<ul class="org-ul"><li><a id="sec-2-2-1-1" name="sec-2-2-1-1"></a>Regression (Housing price prediction)<br  /><div class="outline-text-5" id="text-2-2-1-1">
+<p>
+Predict continuous valued output (price)
+<img src="./images/screenshot-01.png" alt="screenshot-01.png" />
+</p>
+</div>
+</li>
+<li><a id="sec-2-2-1-2" name="sec-2-2-1-2"></a>Classification (Breast cancer (malignant, benign)<br  /><div class="outline-text-5" id="text-2-2-1-2">
+<p>
+Discrete valued output (0 or 1)
+<img src="./images/screenshot-02.png" alt="screenshot-02.png" />
+</p>
+</div>
+</li></ul>
+</div>
+
+<div id="outline-container-sec-2-2-2" class="outline-4">
+<h4 id="sec-2-2-2">Unsupervised Learning</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<p>
+No knowledge is given.
+</p>
+</div>
+<ul class="org-ul"><li><a id="sec-2-2-2-1" name="sec-2-2-2-1"></a>Google News Grouping<br  /><div class="outline-text-5" id="text-2-2-2-1">
+
+<div class="figure">
+<p><img src="./images/screenshot-03.png" alt="screenshot-03.png" />
+</p>
+</div>
+</div>
+</li>
+<li><a id="sec-2-2-2-2" name="sec-2-2-2-2"></a>Cocktail party problem<br  /><div class="outline-text-5" id="text-2-2-2-2">
+
+<div class="figure">
+<p><img src="./images/screenshot-04.png" alt="screenshot-04.png" />
+</p>
+</div>
+</div>
+</li></ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Linear Regression (Week 1)</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1">Model Representation</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Notations:
+</p>
+<ol class="org-ol">
+<li>\(m\) is Number of training examples.
+</li>
+<li>\(x\)'s is "input" variable  / feature.
+</li>
+<li>\(y\)'s is "output" variable / "target" variables.
+</li>
+<li>\((x,y)\) is one training example.
+</li>
+<li>\((x^{(i)},y^{(i)})\) is the \(i\)th example, \(i\) starts from \(0\).
+</li>
+<li>\(h\) is called hypothesis, it maps the input to output. In this lecture, we represent \(h\) using linear function, thus it's called <b>linear regression</b>. For linear regression with one variable, it's called <b>univariate linear regression</b>. For example, the <b>univariate linear regression</b> is usually written as: \(h_\theta (x) = \theta_0 + \theta_1 x\). The \(\theta\) here represents the coefficient variables. Sometimes it's written as \(h(x)\) as a shorthand.
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2">Cost Function</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Since the hypothesis is written as \(h_\theta (x) = \theta_0 + \theta_1 x\), where \(\theta_i\)'s are the parameters, then how to choose \(\theta_i\)'s?
+The idea is to choose \(\theta_0, \theta_1\) so that \(h_\theta (x)\) is close to \(y\) for our training examples \((x,y)\). More formally, we want to
+\[
+\underset{\theta_0,\theta_1}{\text{minimize}} \frac{1}{2m}\sum_{i=1}^{m}\left( h_\theta(x^{(i)}) - y^{(i)} \right)^2
+\],
+where \(m\) is the number of trainnig examples. To recap, we're minimizing half of the averaging error. Note that the variable here are \(\theta\)s, and \(x\) and \(y\)'s are constants.
+</p>
+
+<p>
+By convention, we define the <b>cost function</b> \(J(\theta_0,\theta_1)\) to represent the objective function. That is
+</p>
+\begin{gather*}
+J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}\left( h_\theta(x^{(i)}) - y^{(i)} \right)^2 \\
+\underset{\theta_0,\theta_1}{\text{minimize}} J(\theta_0,\theta_1)
+\end{gather*}
+
+<p>
+This cost function is also called <b>squared error function</b>. There are other cost functions, but it turns out that squared error function is a resonable choice and will work for most of regression problem.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3">
+<h3 id="sec-3-3">Cost Function Intuition</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+Before getting a intuition about the cost function, let's have a recap, we now have
+</p>
+<ol class="org-ol">
+<li>Hypothesis: \[h_\theta (x) = \theta_0 + \theta_1 x\]
+</li>
+<li>Parameters: \[\theta_0,\theta_1\]
+</li>
+<li>Cost Function: \[J(\theta_0,\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}\left( h_\theta(x^{(i)}) - y^{(i)} \right)^2 \]
+</li>
+<li>Goal: \[\underset{\theta_0,\theta_1}{\text{minimize}} J(\theta_0,\theta_1)\]
+</li>
+</ol>
+
+<p>
+In order to visualize our cost function, we use a simplified hypothesis function: \(h_\theta (x) = \theta_1 x\), which sets \(\theta_0\) to \(0\). So now we have
+</p>
+<ol class="org-ol">
+<li>Hypothesis: \[h_\theta (x) =  \theta_1 x\]
+</li>
+<li>Parameters: \[\theta_1\]
+</li>
+<li>Cost Function: \[J(\theta_1) = \frac{1}{2m}\sum_{i=1}^{m}\left( h_\theta(x^{(i)}) - y^{(i)} \right)^2 \]
+</li>
+<li>Goal: \[\underset{\theta_1}{\text{minimize}} J(\theta_1)\]
+</li>
+</ol>
+
+<p>
+So now let's compare function \(h_\theta (x)\) and function \(J(\theta_1)\):
+<img src="./images/screenshot-05.png" alt="screenshot-05.png" />
+</p>
+
+<p>
+Then let's come back to the original function, where we don't have the constrain that \(\theta_0 = 0\). The comparison is like
+<img src="./images/screenshot-06.png" alt="screenshot-06.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-4" class="outline-3">
+<h3 id="sec-3-4">Gradient Descent</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+Now we have some function \(J(\theta_0,\theta_1)\) and we want to \(\underset{\theta_0,\theta_1}{\text{minimize}}J(\theta_0,\theta_1)\), we use <b>gradient descent</b> here, which
+</p>
+<ol class="org-ol">
+<li>Start with some \(\theta_0,\theta_1\),
+</li>
+<li>Keep changing \(\theta_0,\theta_1\) to reduce \(J(\theta_0,\theta_1)\), until we hopefully end up at a minimum.
+</li>
+</ol>
+
+<p>
+To help understand gradient descent, suppose you are standing at one point on the hill, and you want to take a small step to step downhill as quickly as possible, then you would choose the deepest direction to downhill.
+<img src="./images/screenshot-07.png" alt="screenshot-07.png" />
+You keep doing this until to get to a local minimum.
+<img src="./images/screenshot-08.png" alt="screenshot-08.png" />
+</p>
+
+<p>
+But if you start with a different initial position, gradient descent will take you to a (very) different position.
+<img src="./images/screenshot-08.png" alt="screenshot-08.png" />
+</p>
+</div>
+<div id="outline-container-sec-3-4-1" class="outline-4">
+<h4 id="sec-3-4-1">Gradient Descent algorithm</h4>
+<div class="outline-text-4" id="text-3-4-1">
+<p>
+We use \(a := b\) to represent <b>assignment</b> and \( a = b\) to represent <b>truth assertion</b>.
+</p>
+
+
+
+
+<div class="figure">
+<p><img src="test.png" alt="test.png" />
+</p>
+</div>
+
+
+<p>
+The \(\alpha\) here is called learning rate.
+</p>
+
+<p>
+Pay attention that when implementing gradient descent, we need to update all \(\theta\text{s}\) simultaneous.
+<img src="./images/screenshot-10.png" alt="screenshot-10.png" />
+</p>
+
+<p>
+Recall that \(\alpha\) is a called the learning rate, which is actually a scale factor to our step represented by the derivative term. Take a 1D case as an example, the derivative is the direction (slop of the tanget line) where the function value becomes larger, so we should take its negative as our step.
+<img src="./images/screenshot-11.png" alt="screenshot-11.png" />
+</p>
+
+
+<p>
+If \(\alpha\) is too small, gradient descent can be slow. If \(\alpha\) is too large, gradient can overshoot the minimum. It may fail to converge, or even diverge.
+<img src="./images/screenshot-12.png" alt="screenshot-12.png" />
+</p>
+
+
+<p>
+Gradient descent can converge to a local minimum, even with the learning rate \(\alpha\) fixed. This is because as we approach a local minimum, gradient descent will automatically take smaller steps. So no need to descrease \(\alpha\) over time.
+</p>
+
+
+<p>
+<b>Batch</b> Gradient descent:
+Each step of gradient descent uses all the training examples:
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">Linear Algebra (Week1, Optional)</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+This lecture use 1-indexed subscripts.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">Linear Regression with Multiple Variables (Week 2)</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1">Multiple Features</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+<img src="./images/screenshot-13.png" alt="screenshot-13.png" />
+Notation:
+</p>
+<ol class="org-ol">
+<li>number of features: \(n\)
+</li>
+<li>input (features) of \(i^{\text{th}}\) training example: \(x^{(i)}\)
+</li>
+<li>value of feature \(j\) in \(i^{th}\) training example. \(x^{(i)}_{j}\)
+</li>
+</ol>
+
+<p>
+Now our hypothesis is \(h_\theta (x) = \theta_0 + \theta_1 x_1 +  \theta_2 x_2 + \dots + \theta_n x_n \).
+For convenience of notation, define \(x_0 = 1\), or \(x^{(i)}_0 = 1\). So now we define our hypothesis as
+</p>
+\begin{equation*}
+\begin{split}
+h_\theta (x) &= \theta_0 x_0 + \theta_1 x_1 +  \theta_2 x_2 + \dots + \theta_n x_n \\
+&= \theta x
+\end{split}
+\end{equation*}
+<p>
+where \(\theta\) is a \(n+1\) dimension vector.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2">Gradient Descent for Multiple Variables</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+So now our new algorithm becomes
+<img src="./images/screenshot-14.png" alt="screenshot-14.png" />
+Note that our new algorithm for \(\theta_0\) is just like the old one since \(x_0^{(i)} \) is 1.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-5-3" class="outline-3">
+<h3 id="sec-5-3">Gradient Descent in Practice - Feature Scaling.</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+Idea: Make sure features are on a similar scale, then gradient descent will converge more quickly.
+</p>
+
+<p>
+Take a 2D example,  if the dimension of \(x_1\) is much larger than the dimension of \(x_2\), then the search region is a long ellipsis shape which is make gradient much difficult to find the minimum.
+<img src="./images/screenshot-15.png" alt="screenshot-15.png" />
+We can rescale all features to [0,1] so the contours now become a circle.
+<img src="./images/screenshot-16.png" alt="screenshot-16.png" />
+</p>
+
+<p>
+Usually we get every feature into approximately a \(-1 \leq x \leq 1\) range. But it need not to be exactly. Say \(-3 \leq x \leq 3 \) is OK.
+</p>
+
+
+<p>
+Mean normalization: Replace \(x_i\) with \(x_i - \mu_i\) to make features have approximately zero mean. Note that this does not apply to \(x_0 = 1\).
+</p>
+</div>
+</div>
+<div id="outline-container-sec-5-4" class="outline-3">
+<h3 id="sec-5-4">Gradient Descent in Practice - Learning Rate.</h3>
+<div class="outline-text-3" id="text-5-4">
+<p>
+To make sure gradient descent is working correctly, draw the figure the value of \(J(\theta)\) versus the number of iterations.
+<img src="./images/screenshot-17.png" alt="screenshot-17.png" />
+</p>
+
+<p>
+For sufficiently small \(\alpha\), \(J(\theta\) should decrease on every iteration. But if \(\alpha\)  is too small, gradient descent can converge too slow. To choose \(\alpha\) try \( \dots, 0.001, 0.003,0.01, 0.03,0.1, 0.3,1, \dots\), roughly a 3x larger.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-5-5" class="outline-3">
+<h3 id="sec-5-5">Features and Polynomial Regression</h3>
+<div class="outline-text-3" id="text-5-5">
+<p>
+You need to choose a good feature instead of just using what you're provided. For example, for housing price prediction, you are provided with the frontage and depth feature, you can define a feature called area = frontage x depth.
+<img src="./images/screenshot-18.png" alt="screenshot-18.png" />
+</p>
+
+<p>
+Or sometimes use a polynomial function would be better. If the feature is not enough, you could use size, size^2, size^3 as features.
+<img src="./images/screenshot-18.png" alt="screenshot-18.png" />
+</p>
+
+<p>
+Or you can use square root as feature.
+<img src="./images/screenshot-19.png" alt="screenshot-19.png" />
+How to find the minimum of \(J(\theta)\) analytically?
+</p>
+
+<p>
+By Calculus, we can take the partial derivatives of each variable, and set it to 0.
+</p>
+
+<p>
+Normal Equation:
+<img src="./images/screenshot-22.png" alt="screenshot-22.png" />
+Then we can compute \(\theta = (X^T X)^{-1} X^T y\)
+The Octave code is:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-octave">pinv(X' * X) * X' * y
+</pre>
+</div>
+<p>
+Compare Gradient Descent with Normal Equation.
+<img src="./images/screenshot-20.png" alt="screenshot-20.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-5-6" class="outline-3">
+<h3 id="sec-5-6">Normal Equation and Noninvertbility (Optional)</h3>
+<div class="outline-text-3" id="text-5-6">
+<p>
+Use <code>pinv</code> in Octave should not be a problem.
+What if \(X^T X\) is non-invertible?
+</p>
+<ol class="org-ol">
+<li>Reduent features (linearyly dependant).
+E.g. \(x_1\) = size in feet, \(x_2\) size in m^2.
+</li>
+<li>Too many features (e.g. $m &le; n).
+Delete some features, or use regulariation.
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">Octave Tutorial</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1">Basic Operation</h3>
+<div class="outline-text-3" id="text-6-1">
+<div class="org-src-container">
+
+<pre class="src src-octave">5+6
+3-2
+5*8
+1/2
+2^6
+
+
+1 <span class="org-builtin">==</span> 2 <span class="org-comment-delimiter">%</span><span class="org-comment">false</span>
+1 ~= 2 
+1 <span class="org-builtin">&amp;&amp;</span> 0
+1 <span class="org-builtin">||</span> 0
+
+xor(1,0) <span class="org-comment-delimiter">%</span><span class="org-comment">XOR</span>
+
+<span class="org-variable-name">PS1</span>(<span class="org-string">'&gt;&gt; '</span>); <span class="org-comment-delimiter">% </span><span class="org-comment">to change the prompt sign</span>
+
+a = 3; <span class="org-comment-delimiter">% </span><span class="org-comment">semicolon supressing output</span>
+a
+
+disp(a);
+disp(sprintf(<span class="org-string">'2 decimals: %0.2f'</span>, a))
+
+a
+<span class="org-keyword">format</span> long
+a
+<span class="org-keyword">format</span> short
+a
+
+A = [1 2; 3 4; 5 6]
+
+A = [1 2
+     3 4
+     5 6]
+
+v = [1 2 3]
+
+v = 1:0.1:2
+
+ones(2,3)
+
+C = 2*ones(2,3)
+
+C = [2 2 2; 2 2 2]
+
+w = ones(1,3)
+w = zeros(1,3)
+w = rand(1,3)
+
+rand(3,3)
+rand(3,3)
+
+w = randn(1,3) <span class="org-comment-delimiter">% </span><span class="org-comment">guassian distribution</span>
+
+w = -6 + sqrt(10)*(randn(1,10000)); <span class="org-comment-delimiter">% </span><span class="org-comment">you don't want to omit the semicolon here</span>
+
+hist(w)
+hist(w,50)
+
+eye(4) <span class="org-comment-delimiter">% </span><span class="org-comment">identity matrix</span>
+<span class="org-variable-name">I</span> = eye(6)
+
+<span class="org-keyword">help</span> eye
+</pre>
+</div>
+
+<pre class="example">
+ans =  11
+ans =  1
+ans =  40
+ans =  0.50000
+ans =  64
+ans = 0
+ans =  1
+ans = 0
+ans =  1
+ans =  1
+a =  3
+ 3
+2 decimals: 3.00
+a =  3
+a =  3
+a =  3
+A =
+
+   1   2
+   3   4
+   5   6
+
+A =
+
+   1   2
+   3   4
+   5   6
+
+v =
+
+   1   2   3
+
+v =
+
+ Columns 1 through 8:
+
+    1.0000    1.1000    1.2000    1.3000    1.4000    1.5000    1.6000    1.7000
+
+ Columns 9 through 11:
+
+    1.8000    1.9000    2.0000
+
+ans =
+
+   1   1   1
+   1   1   1
+
+C =
+
+   2   2   2
+   2   2   2
+
+C =
+
+   2   2   2
+   2   2   2
+
+w =
+
+   1   1   1
+
+w =
+
+   0   0   0
+
+w =
+
+   0.50177   0.44562   0.78465
+
+ans =
+
+   0.1742171   0.1452926   0.2018529
+   0.4143967   0.0042985   0.3379501
+   0.0622374   0.8688085   0.1016939
+
+ans =
+
+   0.244176   0.290366   0.070303
+   0.420092   0.080140   0.749693
+   0.811612   0.647557   0.232618
+
+w =
+
+  -0.77445   1.28150   0.63702
+
+ans =
+
+Diagonal Matrix
+
+   1   0   0   0
+   0   1   0   0
+   0   0   1   0
+   0   0   0   1
+
+I =
+
+Diagonal Matrix
+
+   1   0   0   0   0   0
+   0   1   0   0   0   0
+   0   0   1   0   0   0
+   0   0   0   1   0   0
+   0   0   0   0   1   0
+   0   0   0   0   0   1
+
+'eye' is a built-in function from the file libinterp/corefcn/data.cc
+
+ -- Built-in Function: eye (N)
+ -- Built-in Function: eye (M, N)
+ -- Built-in Function: eye ([M N])
+ -- Built-in Function: eye (..., CLASS)
+     Return an identity matrix.  If invoked with a single scalar
+     argument N, return a square NxN identity matrix.  If supplied two
+     scalar arguments (M, N), 'eye' takes them to be the number of rows
+     and columns.  If given a vector with two elements, 'eye' uses the
+     values of the elements as the number of rows and columns,
+     respectively.  For example:
+
+          eye (3)
+           =&gt;  1  0  0
+               0  1  0
+               0  0  1
+
+     The following expressions all produce the same result:
+
+          eye (2)
+          ==
+          eye (2, 2)
+          ==
+          eye (size ([1, 2; 3, 4])
+
+     The optional argument CLASS, allows 'eye' to return an array of the
+     specified type, like
+
+          val = zeros (n,m, "uint8")
+
+     Calling 'eye' with no arguments is equivalent to calling it with an
+     argument of 1.  Any negative dimensions are treated as zero.  These
+     odd definitions are for compatibility with MATLAB.
+
+     See also: speye, ones, zeros.
+
+
+Additional help for built-in functions and operators is
+available in the online version of the manual.  Use the command
+'doc &lt;topic&gt;' to search the manual index.
+
+Help and information about Octave is also available on the WWW
+at http://www.octave.org and via the help@octave.org
+mailing list.
+</pre>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2">Move data around</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+
+<style type="text/css">
+.back-to-top {
+    position: fixed;
+    bottom: 2em;
+    right: 0px;
+    text-decoration: none;
+    color: #000000;
+    background-color: rgba(235, 235, 235, 0.80);
+    font-size: 12px;
+    padding: 1em;
+    display: none;
+}
+
+.back-to-top:hover {    
+    background-color: rgba(135, 135, 135, 0.50);
+}
+</style>
+
+<div class="back-to-top">
+<a href="#top">Back to top</a> | <a href="mailto:sacha@sachachua.com">E-mail me</a>
+</div>
+
+<script type="text/javascript">
+    var offset = 220;
+    var duration = 500;
+    jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() > offset) {
+            jQuery('.back-to-top').fadeIn(duration);
+        } else {
+            jQuery('.back-to-top').fadeOut(duration);
+        }
+    });
+</script>
+</div>
+</body>
+</html>
