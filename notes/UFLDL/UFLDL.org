@@ -485,3 +485,36 @@ One-vs-all is also called one-vs-rest.
 
 [[file:./images/screenshot-33.png]]
 
+
+The method is:
+[[file:./images/screenshot-34.png]]
+* Regulation (Week 3)
+** The problem of Overfitting
+[[file:./images/screenshot-35.png]]
+
+[[file:./images/screenshot-36.png]]
+
+For Logistic regression:
+[[file:./images/screenshot-37.png]]
+
+How to solve the problem?
+[[file:./images/screenshot-38.png]]
+** Cost Function
+[[file:./images/screenshot-39.png]]
+The idea behind regulation is that:
+[[file:./images/screenshot-40.png]]
+Note that we didn't penalize \theta_0
+
+[[file:./images/screenshot-41.png]]
+
+What if \lambda is too large?
+[[file:./images/screenshot-42.png]]
+** Regularized linear regression
+
+[[file:./images/screenshot-43.png]]
+
+When using normal equation:
+[[file:./images/screenshot-44.png]]
+** Regularized Logistic Regression
+Now update \theta_0 separately
+[[file:./images/screenshot-45.png]]
