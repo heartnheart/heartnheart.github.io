@@ -463,5 +463,25 @@ It's a line that separates the regions where the hypothesis predicts 1 or 0.
 Since $g(z) \geq 0.5$ when $z \geq 0.5$, which means that $h_\theta(x) \geq 0.5$ whenever
 $\theta^{T} x \geq 0$
 ** Cost Function
+How to fit the parameters \theta for Logistic Regression?
 We define the cost function as below since $h_\theta(x)$ is in the range [0,1].
 [[file:./images/screenshot-27.png]]
+** Simplified Cost Function and Gradient Descent
+Remember that the Logistic regression cost function is in two parts, since y can be 0 or 1 only,  we can write the cost function in a new way:
+[[file:./images/screenshot-28.png]]
+
+Remember that gradient descent is like:
+[[file:./images/screenshot-29.png]]
+
+where the partial derivatives is like:
+[[file:./images/screenshot-30.png]]
+** Advance Optimization
+[[file:./images/screenshot-31.png]]
+
+Note that the Octave start from 1 instead of 0.
+[[file:./images/screenshot-32.png]]
+** Multiclass Classification: One-vs-all
+One-vs-all is also called one-vs-rest.
+
+[[file:./images/screenshot-33.png]]
+
