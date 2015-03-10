@@ -581,4 +581,4 @@ Backpropagation algorithm
 
 [[file:./images/screenshot-64.png]]
 [[file:./images/screenshot-65.png]]
-** Implementation Notes Unrolling Parameters
+
