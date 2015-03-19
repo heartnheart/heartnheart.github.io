@@ -582,3 +582,48 @@ Backpropagation algorithm
 [[file:./images/screenshot-64.png]]
 [[file:./images/screenshot-65.png]]
 
+** Implementation Notes Unrolling Parameters
+In Neural Network our parameters are matrices, and we need to unroll it into vectors.
+[[file:./images/screenshot-66.png]]
+** Gradient Checking
+Use nummerical estimation of gradients to check.
+** Random Initialization
+We need to provide an initial value for gradient fescent and advanced optimization method.
+
+Zero Initialization will result in identical values.
+
+To solve this problem, we use random initialization to break the symmerty.
+[[file:./images/screenshot-69.png]]
+** Put it together
+[[file:./images/screenshot-70.png]]
+
+How to train a neural network
+[[file:./images/screenshot-71.png]]
+[[file:./images/screenshot-72.png]]
+* Advice for Applying machine Learning 
+** Deciding What to Try Next
+1. Get more training examples
+2. Try smaller sets of features
+3. Try getting additional features.
+4. Try adding polynomial features
+5. Try decreasing \lambda.
+6. Try increasing \lambda.
+** Evaluating a Hypothesis
+Hypothesis can be overfitting.
+
+We can evaluate our hypothesis by separate our date into training set and test set.
+** Model Selection and Train/Validation/Test Sets
+
+
+[[file:./images/screenshot-73.png]]
+
+[[file:./images/screenshot-74.png]]
+To address this problem, we divide our data set into three parts: training set, cross validation set, and test set.
+[[file:./images/screenshot-76.png]]
+[[file:./images/screenshot-75.png]]
+
+Use cross validation error to selection the model degree and use test set error to select \theta.
+** Diagonosing Bias vs Variance
+Bias (undearfit)
+Variance (overfit)
+[[file:./images/screenshot-77.png]]
