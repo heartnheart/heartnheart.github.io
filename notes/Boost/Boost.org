@@ -1,0 +1,7 @@
+* Boost.Python
+** What is Boost Python
+1. It's a framework for interfacing Python and C++, which allows you to *expose C++ classes and object to Python*, and *vice-versa*.
+2. It does not require special tools, except for your C++ compiler.
+3. It's designed to wrap C++ interface *non-intrusively*, so that you don't have to change the original C++ code in order to wrap it, making Boost.Python ideal for exposing 3rd-party libraries to Python.
+** How to compile Hello world example
+Boost Hello World example on the [[http://www.boost.org/doc/libs/1_57_0/libs/python/doc/tutorial/doc/html/index.html#python.quickstart][Quick Start Page]], and the Building process is on the [[http://www.boost.org/doc/libs/1_57_0/libs/python/doc/tutorial/doc/html/python/hello.html][Building Hello World]] page. However, it use MSVC as an example. For linux, I didn't find a bjam example. But [[https://jayrambhia.wordpress.com/2012/06/25/configuring-boostpython-and-hello-boost/][here]] is a Makefile example. 
