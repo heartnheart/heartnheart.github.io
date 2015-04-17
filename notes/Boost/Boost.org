@@ -1,3 +1,14 @@
+#+TITLE:       Boost Notes
+#+AUTHOR:      Xiaolong Zhang
+#+EMAIL:       xlzhang@cs.hku.hk
+#+DATE:        2015-04-17 Fri
+#+URI:         /blog/%y/%m/%d/Boost Notes
+#+KEYWORDS:    Boost, Notes
+#+TAGS:        Boost, Notes
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: Note for Boost
+
 * Boost.Python
 ** What is Boost Python
 1. It's a framework for interfacing Python and C++, which allows you to *expose C++ classes and object to Python*, and *vice-versa*.

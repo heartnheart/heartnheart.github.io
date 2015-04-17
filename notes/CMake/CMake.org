@@ -1,1 +1,11 @@
+#+TITLE:       CMake Notes
+#+AUTHOR:      Xiaolong Zhang
+#+EMAIL:       xlzhang@cs.hku.hk
+#+DATE:        2015-04-17 Fri
+#+URI:         /blog/%y/%m/%d/CMake Notes
+#+KEYWORDS:    CMake, Notes
+#+TAGS:        CMake, Notes
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: Notes for CMake
 
