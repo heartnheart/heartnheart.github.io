@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Python Notes - org-page</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Xiaolong Zhang" />
+    <meta name="description" content="Notes about python" />
+    <meta name="keywords" content="Python,notes" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">org-page</a></h1>
+        <p>static site generator</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/notes/">Notes</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/kelvinh/org-page">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="http://www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="heartnheart.github.io">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>Python Notes</h1>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Learning Python the hard way (3rd)</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Digital downloads and paper versions can be purchased. The free HTML version is available at <a href="http://learnpythonthehardway.org/book">http://learnpythonthehardway.org/book</a>
+</p>
+
+<p>
+This book call the <b>hard</b> way because it uses a technique called the <b>instruction</b>, where you are told to a sequcence of controlled exercises desinged to build a skill through repetition. For beginners who know nothing <b>but need to acquire before they can understand more complex topics</b>.
+</p>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">The Hard Way is Easier</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+With the help of the book, you will do the incredibly simple things that all programmers do to learn a programming languages:
+</p>
+<ol class="org-ol">
+<li>Go though each exercies.
+</li>
+<li>Type in each sample exactly.
+</li>
+<li>Make it run.
+</li>
+</ol>
+
+<p>
+This book's job it to teach you the three basic skills that a beginning programmer needs to know: <code>reading and writing</code>, <code>attention to detail, and =spotting differences</code>.
+</p>
+</div>
+<div id="outline-container-sec-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1">Do Not Copy-Paste</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+You must <b>type</b> each of these exercises in, <b>manually</b>. If you copy and paste, you might as well not even do them. The point of these exercises is to train you hands, your brain, and your mind in how to read, write and see code. <b>If you copy-paste, you are cheating youself out of the effecitveness of the lessons</b>.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">Exercise 0: The Setup</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Basic setup, nothing new.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3">Exercise 1: A Good First Program</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Type a lot of <code>print</code> statements
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4">Exercise 2: Comments and Pound Characters</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+The comment sign in Python is <code>#</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5">Exercise 3: Numbers and Math</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Common math operators in Python
+</p>
+<pre class="example">
++ - * / % &lt; &gt; &lt;= &gt;=
+</pre>
+<p>
+Note that <code>/</code> stands for integer division. Use floating number if need.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-6" class="outline-3">
+<h3 id="sec-1-6">Exercise 4: Variables And Names</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+Use <code>﻿=﻿</code> to create a variable.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-7" class="outline-3">
+<h3 id="sec-1-7">Exercise 5: More Variables and Printing</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+Use <code>%</code> to create string with symbols
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">name = "Michael"
+age = 10
+weight = 10
+print "My name is %s" % name
+print "My age is %d and weight is %d" % (age, weight)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-8" class="outline-3">
+<h3 id="sec-1-8">Exercise 6: Strings and Text</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+String is made by puttting either <code>﻿"﻿</code> double-quotes or <code>​'​</code> (single-quote) around text.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-9" class="outline-3">
+<h3 id="sec-1-9">Exercise 7: More Printing</h3>
+<div class="outline-text-3" id="text-1-9">
+<div class="org-src-container">
+
+<pre class="src src-python">print '.' * 10                  # will print 10 dot characters
+
+print "A String",               # The comma would make this two line
+                                # as one line output, to avoid a line
+                                # logner than 80 characters
+print "Another String"
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-10" class="outline-3">
+<h3 id="sec-1-10">Exercise 8: Printing, Printing</h3>
+<div class="outline-text-3" id="text-1-10">
+<p>
+Nothing new
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-11" class="outline-3">
+<h3 id="sec-1-11">Exercise 9: Printing, Printing, Printing</h3>
+<div class="outline-text-3" id="text-1-11">
+<p>
+<code>​"""​</code> is used to create multiple ilne of strings.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-12" class="outline-3">
+<h3 id="sec-1-12">Exercise 10: What Was That?</h3>
+<div class="outline-text-3" id="text-1-12">
+<p>
+Escape character like <code>\n</code>, <code>\'​</code>, <code>\"﻿</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-13" class="outline-3">
+<h3 id="sec-1-13">Exercise 11: Asking Questions</h3>
+<div class="outline-text-3" id="text-1-13">
+<p>
+Use <code>raw_input()</code> to ask input from user.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">print "How old are you?",
+age = raw_input()
+print "You are %r old", age
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-14" class="outline-3">
+<h3 id="sec-1-14">Exercise 12: Prompting People</h3>
+<div class="outline-text-3" id="text-1-14">
+<p>
+<code>raw_input()</code> accepts a parameter for prompting.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">age = raw_input("how old are you?")
+print "you are %r old", age
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-15" class="outline-3">
+<h3 id="sec-1-15">Exercise 13: Parameters, Unpacking, Variables</h3>
+<div class="outline-text-3" id="text-1-15">
+<div class="org-src-container">
+
+<pre class="src src-python">from sys import argv
+script, first, second, third = argv
+print "The script is called:", script
+print "Your first variable is:", first
+print "Your second variable is:", second
+print "Your third variable is:", third
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-16" class="outline-3">
+<h3 id="sec-1-16">Exercise 14: Prompting and Passing</h3>
+<div class="outline-text-3" id="text-1-16">
+<p>
+Nothing new.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-17" class="outline-3">
+<h3 id="sec-1-17">Exercise 15: Reading Files</h3>
+<div class="outline-text-3" id="text-1-17">
+<p>
+Use <code>open</code> to create a <code>file</code> object, and use the <code>read</code> function of that object to get the content of file.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">filename = 'test.txt'
+txt = open(filename)
+print txt.read()
+</pre>
+</div>
+<p>
+Note that Python <b>will not</b> restrict you from opening a file more than once and sometimes this is necessary.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-18" class="outline-3">
+<h3 id="sec-1-18">Exercise 16: Reading and Writing Files</h3>
+<div class="outline-text-3" id="text-1-18">
+<p>
+Here is alist of commands that need remember:
+</p>
+<ol class="org-ol">
+<li><code>close</code> -- Close the file.
+</li>
+<li><code>read</code> -- Reads the contents of the file. You can assign the result to a variable.
+</li>
+<li><code>readline</code> -- Reads just one line of a text file.
+</li>
+<li><code>truncate</code> -- Empties the file. Watch out if you care about the file.
+</li>
+<li><code>write('stuff')</code> Writes "stuff" to the file.
+</li>
+</ol>
+
+<div class="org-src-container">
+
+<pre class="src src-python">from sys import argv
+script, filename = argv
+
+print "We're going to erase %r." % filename
+print "If you don't want that, hit CTRL-C (^C)."
+print "If you do want that, hit RETURN."
+
+raw_input("?")
+
+print "Opening the file..."
+target = open(filename, 'w')
+
+print "Truncating the file. Goodbye!"
+target.truncate()
+
+print "Now I'm going to ask you for three lines."
+
+line1 = raw_input("line1: ")
+line2 = raw_input("line2: ")
+line3 = raw_input("line3: ")
+
+print "I'm going to write these to the file."
+
+target.write(line1)
+target.write("\n")
+target.write(line2)
+target.write("\n")
+target.write(line3)
+target.write("\n")
+
+print "And finally, we close it."
+target.close()
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-19" class="outline-3">
+<h3 id="sec-1-19">Exercise 17: More Files</h3>
+<div class="outline-text-3" id="text-1-19">
+<p>
+Learn to how to copy a file. The <code>exists</code> function get by <code>from os.path import exists</code> can determine whether a file exists. The <code>len</code> function returns the number of items in a sequence.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-python">from sys import argv
+from os.path import exists
+
+script, from_file, to_file = argv
+
+print "Copying from %s to %s" % (from_file, to_file)
+
+# we could do these two on one line, how?
+in_file = open(from_file)
+indata = in_file.read()
+
+print "The input file is %d bytes long" % len(indata)
+
+print "Does the output file exist? %r" % exists(to_file)
+print "Really, hit RETURN to continue, CTRL-C to abort."
+raw_input()
+
+out_file = open(to_file, 'w')
+out_file.write(indata)
+
+print "Alright, all done."
+
+out_file.close()
+in_file.close()
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-20" class="outline-3">
+<h3 id="sec-1-20">Exercise 18: Names, Variables, Code, Functions</h3>
+<div class="outline-text-3" id="text-1-20">
+<p>
+Learn how to define a function in Python
+</p>
+<ol class="org-ol">
+<li>start with <code>def</code> keyword.
+</li>
+<li>give the function name and arguments inside the parentheses.
+</li>
+<li>Remember to end the first line with <code>):</code>
+</li>
+<li>Then start indenting and type what you want.
+</li>
+</ol>
+
+<p>
+If you want to pack all the arguments inside one variable, use <code>*arg</code>.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"># This one is like your scripts with argv
+def print_two(*args):
+    arg1, arg2 = args
+    print "arg1: %r, arg2: %r" % (arg1, arg2)
+
+
+# ok, that *args is actually pointless, we can just do this
+def print_two_again(arg1, arg2):
+    print "arg1: %r, arg2: %r" % (arg1, arg2)
+
+
+# this just takes one argument
+def print_one(arg1):
+    print "arg1: %r" % arg1
+
+
+# this one takes no argument
+def print_none():
+    print "I got nothin'."
+
+
+print_two("Zed", "Shaw")
+print_two_again("Zed", "Shaw")
+print_one("First!")
+print_none()
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-21" class="outline-3">
+<h3 id="sec-1-21">Exercise 19: Functions and Variables</h3>
+<div class="outline-text-3" id="text-1-21">
+<p>
+Just need to know that when you declare a variable inside a function, you can not use it outside the funciton scope.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-22" class="outline-3">
+<h3 id="sec-1-22">Exercise 20: Functions and Files</h3>
+<div class="outline-text-3" id="text-1-22">
+<p>
+Nothing new.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-23" class="outline-3">
+<h3 id="sec-1-23">Exercise 21: Functions Can Return Something</h3>
+<div class="outline-text-3" id="text-1-23">
+<p>
+Add return statement at the end of <code>def</code> funciton could return a value. Note that if you return nothing. A <code>NoneType</code> would be returned.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">def add(a, b):
+    print "ADDING %d + %d" % (a, b)
+    return a + b
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-24" class="outline-3">
+<h3 id="sec-1-24">Exercise 22: What Do You Know So Far?</h3>
+<div class="outline-text-3" id="text-1-24">
+<p>
+A Review, nothing new.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-25" class="outline-3">
+<h3 id="sec-1-25">Exercise 23: Read Some Code</h3>
+<div class="outline-text-3" id="text-1-25">
+<p>
+Find some code on github etc to read, nothing new.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-26" class="outline-3">
+<h3 id="sec-1-26">Exercise 24: More Practice</h3>
+<div class="outline-text-3" id="text-1-26">
+<p>
+Nothing new.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-27" class="outline-3">
+<h3 id="sec-1-27">Exercise 25: Even More Practice</h3>
+<div class="outline-text-3" id="text-1-27">
+<p>
+Nothing new.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-28" class="outline-3">
+<h3 id="sec-1-28">Exercise 26: Congratulations, Take a Test!</h3>
+<div class="outline-text-3" id="text-1-28">
+<p>
+Nothing new.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-29" class="outline-3">
+<h3 id="sec-1-29">Exercise 27: Memorizing Logic</h3>
+<div class="outline-text-3" id="text-1-29">
+<p>
+Python has the following truth terms:
+</p>
+<ol class="org-ol">
+<li><code>and</code>
+</li>
+<li><code>or</code>
+</li>
+<li><code>not</code>
+</li>
+<li><code>﻿!=﻿</code>
+</li>
+<li><code>﻿=﻿=﻿</code>
+</li>
+<li><code>﻿&gt;=﻿</code>
+</li>
+<li><code>﻿&lt;=﻿</code>
+</li>
+<li><code>True</code>
+</li>
+<li><code>False</code>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-1-30" class="outline-3">
+<h3 id="sec-1-30">Exercise 28: Boolean Practice</h3>
+<div class="outline-text-3" id="text-1-30">
+<p>
+Python will return one of the operands to their boolean expression rather than just <code>Ture</code> or <code>False</code>. This means that if you did <code>False and 1</code>, you get the first operand (<code>False</code>) but if you do <code>True and 1</code>, you get the second (<code>1</code>).
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-31" class="outline-3">
+<h3 id="sec-1-31">Exercise 29: What If</h3>
+<div class="outline-text-3" id="text-1-31">
+<div class="org-src-container">
+
+<pre class="src src-python">if a &lt; b:
+    print "a &lt; b"
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-32" class="outline-3">
+<h3 id="sec-1-32">Exercise 30: Else and If</h3>
+<div class="outline-text-3" id="text-1-32">
+<div class="org-src-container">
+
+<pre class="src src-python">if cars &gt; people:
+    print "We should take the cars."
+elif cars &lt; people:
+    print "We should not take the cars."
+else:
+    print "We can't decide."
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-33" class="outline-3">
+<h3 id="sec-1-33">Exercise 31: Making Decisions</h3>
+<div class="outline-text-3" id="text-1-33">
+<p>
+Nothing new.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-34" class="outline-3">
+<h3 id="sec-1-34">Exercise 32: Loops and Lists</h3>
+<div class="outline-text-3" id="text-1-34">
+<p>
+Note that <code>range(1,3)</code> will return <code>[1, 2]</code>.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">the_count = [1, 2, 3, 4, 5]
+fruits = ['apples', 'oranges', 'peers', 'apricots']
+change = [1, 'pennies', 2, 'dimes', 3, 'quarters']
+
+# this first kind of for-loop goes through a list
+for number in the_count:
+    print "This is count %d" % number
+
+# same as above
+for fruit in fruits:
+    print "A fruit of type: %s" % fruit
+
+# also we can to through mixed lists too
+# notice we have to use %r since we don't know what's in it
+for i in change:
+    print "I got %r" % i
+
+# we can also build lists, first start with an empty one
+elements = []
+
+# then use the range function to do 0 to 5 counts
+for i in range(0, 6):
+    print "Adding %d to the list." % i
+    # append is a function that lists understand
+    elements.append(i)
+
+# now we can print them out too
+for i in elements:
+    print "Element was: %d" % i
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-35" class="outline-3">
+<h3 id="sec-1-35">Exercise 33: While Loops</h3>
+<div class="outline-text-3" id="text-1-35">
+<div class="org-src-container">
+
+<pre class="src src-python">i = 0
+numbers = []
+
+while i &lt; 6:
+    print "At the top i is %d" % i
+    numbers.append(i)
+
+    i = i + 1
+    print "Numbers now: ", numbers
+    print "At the bottom i is %d" % i
+
+print "The numbers: "
+for num in numbers:
+    print num
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-36" class="outline-3">
+<h3 id="sec-1-36">Exercise 34: Accessing Elements of Lists</h3>
+<div class="outline-text-3" id="text-1-36">
+<p>
+When accessing the first element in a list, use 0 as index.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">animals = ['bear', 'tiger', 'penguin', 'zebra']
+bear = animals[0]
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-37" class="outline-3">
+<h3 id="sec-1-37">Exercise 35: Branches and Functions</h3>
+<div class="outline-text-3" id="text-1-37">
+<p>
+Nothing new.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-38" class="outline-3">
+<h3 id="sec-1-38">Exercise 36: Designing and Debugging</h3>
+<div class="outline-text-3" id="text-1-38">
+<p>
+Nothing new.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-39" class="outline-3">
+<h3 id="sec-1-39">Exercise 37: Symbol Review</h3>
+<div class="outline-text-3" id="text-1-39">
+<p>
+This page is a good reference for Python symbol. <a href="http://learnpythonthehardway.org/book/ex37.html">http://learnpythonthehardway.org/book/ex37.html</a>
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-40" class="outline-3">
+<h3 id="sec-1-40">Exercise 38: Doing Things to Lists</h3>
+<div class="outline-text-3" id="text-1-40">
+<p>
+When Python calling a function, it passes the variable as the first argument to the function.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">ten_things = "Apples Oranges Crows Telephone Light Sugar"
+
+print "Wait there are not 10 things in that list. Let's fix that."
+
+stuff = ten_things.split(' ')
+
+more_stuff = ["Day", "Night", "Song", "Frisbee", "Corn", "Banana",
+              "Girl", "Boy"]
+
+while len(stuff) != 10:
+    next_one = more_stuff.pop()
+    print "Adding: ", next_one
+    stuff.append(next_one)
+    print "There are %d items now." % len(stuff)
+
+
+print "There we go: ", stuff
+
+print "Let's do some things with stuff."
+
+print stuff[1]
+print stuff[-1]
+print stuff.pop()
+print ' '.join(stuff)
+print '#'.join(stuff[3:5])
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-41" class="outline-3">
+<h3 id="sec-1-41">Exercise 39: Dictionaries, Oh Lovely Dictionaries</h3>
+<div class="outline-text-3" id="text-1-41">
+<p>
+With dictionaries (hashes in other languages), you can use anyting as index.
+Besides, we implement a dictionary using list in this exercies.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"># create a mapping of state to abbreviation
+states = {
+    'Oregon': 'OR',
+    'Florida': 'FL',
+    'California': 'CA',
+    'New York': 'NY',
+    'Michigan': 'MI'
+}
+
+# create a basic set of states and some cities in them
+cities = {
+    'CA': 'San Francisco',
+    'MI': 'Detroit',
+    'FL': 'Jacksonville'
+}
+
+
+# add some more cities
+cities['NY'] = 'New York'
+cities['OR'] = 'Portland'
+
+# print out some cities
+print '-' * 10
+print "NY State has: ", cities['NY']
+print "OR State has: ", cities['OR']
+
+# print some states
+print '-' * 10
+print "Michigan's abbreviation is: ", states['Michigan']
+print "Florida's abbreviation is: ", states['Florida']
+
+# do it by using the state then cities dict
+
+print '-' * 10
+print "Michigan has: ", cities[states['Michigan']]
+print "Florida has: ", cities[states['Florida']]
+
+# print every state abbreviation
+print '-' * 10
+for state, abbrev in states.items():
+    print "%s is abbreviated %s" % (state, abbrev)
+
+# print every city in state
+print '-' * 10
+for abbrev, city in cities.items():
+    print "%s has the city %s" % (abbrev, city)
+
+# now do both at the same time
+print '-' * 10
+for state, abbrev in states.items():
+    print "%s state is abbreviated %s and has city %s" % (
+        state, abbrev, cities[abbrev])
+
+print '-' * 10
+# safely get a abbreviation by state that might not be there
+state = states.get('Texas')
+
+if not state:
+    print "Sorry, no Texas"
+
+# get a city with a default value
+city = cities.get('TX', 'Does Not Exist')
+print "The city for the state 'TX' is: %s" % city
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-42" class="outline-3">
+<h3 id="sec-1-42">Exercise 40: Modules, Classes, and Objects</h3>
+<div class="outline-text-3" id="text-1-42">
+<p>
+A module is just like a dictionary, but with different syntax. A class is like a module, but you can create a lot of instances of them.  Creating an object form a class is just like <b>import</b> a module.
+</p>
+
+<p>
+Three ways to get things from things:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"># dict style
+mystuff['apples']
+
+# module style
+mystuff.apples()
+print mystuff.tangerine
+
+# class style
+thing = MyStuff()
+thing.apples()
+print thing.tangerine
+</pre>
+</div>
+
+<p>
+In Python class, if you want to access a class member variable (attribute), you must use <code>self</code>, which is different from Java.
+A First Class Example:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python">class Song(object):
+
+    def __init__(self, lyrics):
+        self.lyrics = lyrics
+
+    def sing_me_a_song(self):
+        for line in self.lyrics:
+            print line
+
+happy_bday = Song(["Happy birthday to you",
+                   "I dont' want to get sued",
+                   "So I'll stop right there"])
+
+bulls_on_parade = Song(["They rally around tha family",
+                        "With pockets full of shells"])
+
+happy_bday.sing_me_a_song()
+
+bulls_on_parade.sing_me_a_song()
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-43" class="outline-3">
+<h3 id="sec-1-43">Exercise 41: Learning To Speak Object Oriented</h3>
+<div class="outline-text-3" id="text-1-43">
+<p>
+This exercise give an example code on creating a drill test
+Use <code>result = sentence[:]</code> to copy a list.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-44" class="outline-3">
+<h3 id="sec-1-44">Exercise 42: Is-A, Has-A, Objects, and Classes</h3>
+<div class="outline-text-3" id="text-1-44">
+<p>
+Talks about OOP concepts.
+</p>
+
+<p>
+There is new-style class and old-style class in Python. Just stick to the new style one.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-45" class="outline-3">
+<h3 id="sec-1-45">Exercise 43: Basic Object-Oriented Analysis and Design</h3>
+<div class="outline-text-3" id="text-1-45">
+<p>
+A game example on how to design in OOP.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-46" class="outline-3">
+<h3 id="sec-1-46">Exercise 44: Inheritance Versus Composition</h3>
+<div class="outline-text-3" id="text-1-46">
+<p>
+When you do inheritance,  there are three ways that the parent and child classes can interact:
+</p>
+<ol class="org-ol">
+<li>Actions on the child <b>imply</b> an action on the parent.
+</li>
+<li>Actions on the child <b>override</b> an action on the parent.
+</li>
+<li>Actions on the child <b>alter</b> the action on the parent.
+</li>
+</ol>
+
+<p>
+Try to avoid inheritance, especially multi-inheritance. Common sense fo OOP.
+A style guid for python: <a href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a>
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-47" class="outline-3">
+<h3 id="sec-1-47">Exercise 45: You Make a Game</h3>
+<div class="outline-text-3" id="text-1-47">
+<p>
+Some coding style:
+Use "camel case" fo class names and "underscore format" for other functions.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-48" class="outline-3">
+<h3 id="sec-1-48">Exercise 46: A Project Skeleton</h3>
+<div class="outline-text-3" id="text-1-48">
+<p>
+How to setup a project skeleton for testing.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-49" class="outline-3">
+<h3 id="sec-1-49">Exercise 47: Automated Testing</h3>
+</div>
+<div id="outline-container-sec-1-50" class="outline-3">
+<h3 id="sec-1-50">Exercise 48: Advanced User Input</h3>
+<div class="outline-text-3" id="text-1-50">
+<p>
+Test First is a programming tactic where you write an automated test that pretends the code works, then you write the code to make the test actuall work. This method works well when you can't visualize how the code is implemented, but you can imagine how you have to work with it.
+</p>
+</div>
+<div id="outline-container-sec-1-50-1" class="outline-4">
+<h4 id="sec-1-50-1">What is <code>__init__.py</code> for?</h4>
+<div class="outline-text-4" id="text-1-50-1">
+<p>
+The <code>__init__.py</code> file are required to make Python treat the directories as containing packages.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-50-2" class="outline-4">
+<h4 id="sec-1-50-2">What is <code>setup.py</code> for?</h4>
+<div class="outline-text-4" id="text-1-50-2">
+<p>
+Usually we put the setup script inside <code>setup.py</code> file. It's the centre of all activity in building, distributing, and installing modules using Distutils. 
+</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2015-01-30</span>
+        <span title="last modification date" class="post-info">2015-02-01</span>
+        <span title="tags" class="post-info"><a href="/tags/python/">Python</a>, <a href="/tags/notes/">notes</a></span>
+        <span title="author" class="post-info">Xiaolong Zhang</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          //var disqus_developer = 1;
+          var disqus_identifier = "/blog/2015/01/30/Python Notes";
+          var disqus_url = "http://heartnheart.github.io/blog/2015/01/30/Python Notes";
+          var disqus_shortname = 'heartnheart';
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </section>
+      <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-61112071-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:xlzhang &lt;at&gt; cs &lt;dot&gt; hku &lt;dot&gt; hk">Xiaolong Zhang</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>
