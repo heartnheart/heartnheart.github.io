@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>LaTeX notes - org-page</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Xiaolong Zhang" />
+    <meta name="description" content="This is my notes when I&#39;m studying LaTeX" />
+    <meta name="keywords" content="LaTeX" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">org-page</a></h1>
+        <p>static site generator</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/notes/">Notes</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/kelvinh/org-page">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="http://www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="heartnheart.github.io">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>LaTeX notes</h1>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">LaTeX WIKI Books</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">LaTeX/Macros</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+There are situations where LaTeX does not provide a command or environment that matches your needs, or the output of produced by some existing command may not meet your requirements. When this happens, we can teach LaTeX new tricks:
+</p>
+</div>
+<div id="outline-container-sec-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1">New Commands</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+To add your own command, use
+</p>
+<p>
+<code>name</code> is the new command name, note that name <b>can not</b> contain digits. <code>num</code> specifies the number of arguments the new command takes (up to <b>9</b>). If missing it defaults to 0, i.e. no argument allowed. <code>definition</code> is the text to be replaced.
+A simple tex replacement:
+</p>
+<p>
+Commands take arguments:
+</p>
+<p>
+Note that there is no overriding function in LaTeX, so you have to give them different names even when two commands only differ in the number of arguments.
+</p>
+
+<p>
+Use <code>\renewcommand</code> to explicityl overwrite an existing command. Use <code>\providecommand</code> to let LaTeX silently ignore the new command if the command is already defined.
+</p>
+
+<p>
+If you want a default parameter for <code>\newcommand</code>, use the form
+</p>
+<p>
+This will make first argument optional, and if not specified, use the value <code>default</code>.
+For example:
+</p>
+<p>
+Some commands are <i>fragile</i>, that is they fail in some environments. If a macro works in body text but not (for example) in a figure caption, then replace the <code>\newcommand{\MyCommand}</code> with <code>\DeclareRobustCommand{\MyCommand}</code> in the preamble. This is especially true for macros which, when expanded, produce text that is written to a <code>.aux</code> file.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Package General Info</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">How to find documentation for a specific package</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="org-src-container">
+
+<pre class="src src-sh">texdoc &lt;package-name&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Specific Package Notes</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><b>algorithms</b> Bundle  <span class="timestamp-wrapper"><span class="timestamp">[2009-08-24 Mon]</span></span> <code>algorithm</code> and <code>algorithmic</code></h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Note that <b>algorithms</b> is a bundle which provide <code>algorithm</code> and <code>algorithmic</code> package, you should use <code>\usepackage{algorithm}</code> or <code>\usepackage{algorithmic}</code> instead of <code>\usepackage{algorithms}</code>.
+</p>
+
+<p>
+This package provides two environments, <code>algorithmic</code> and <code>algorithm</code>, which are designed to be used together but may be used saparately depending on the necessities of the user. The <code>algorithmic</code> environment provides an environment for describing algorithms and the <code>algorithm</code> environment provids a "float" wrapper for algorithms (implemented using <code>algorithmic</code> or some other methdo at the user's option).
+</p>
+</div>
+<div id="outline-container-sec-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1">The <code>algorithmic</code> package</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<p>
+This package provides a number of commands for typesettings popular algorithmic constructus. 
+</p>
+</div>
+<ul class="org-ul"><li><a id="sec-3-1-1-1" name="sec-3-1-1-1"></a>Simple Statement<br  /><div class="outline-text-5" id="text-3-1-1-1">
+</div>
+</li>
+
+<li><a id="sec-3-1-1-2" name="sec-3-1-1-2"></a><code>if-then-else</code><br  /><div class="outline-text-5" id="text-3-1-1-2">
+<p>
+In the third forms there is no limit placed on the number of <code>\ELSIF</code> that may be used.
+</p>
+</div>
+</li>
+<li><a id="sec-3-1-1-3" name="sec-3-1-1-3"></a><code>for</code> loop<br  /><div class="outline-text-5" id="text-3-1-1-3">
+<p>
+You can use <code>\TO</code> connective for distinct <b>to</b> text.
+</p>
+</div>
+</li>
+<li><a id="sec-3-1-1-4" name="sec-3-1-1-4"></a><code>while</code> loop<br  /><div class="outline-text-5" id="text-3-1-1-4">
+</div>
+</li>
+
+<li><a id="sec-3-1-1-5" name="sec-3-1-1-5"></a><code>repeat-until</code> loop<br  /><div class="outline-text-5" id="text-3-1-1-5">
+</div>
+</li>
+
+<li><a id="sec-3-1-1-6" name="sec-3-1-1-6"></a>Infinit loop<br  /><div class="outline-text-5" id="text-3-1-1-6">
+</div>
+</li>
+
+<li><a id="sec-3-1-1-7" name="sec-3-1-1-7"></a>Logic connectives<br  /><div class="outline-text-5" id="text-3-1-1-7">
+<p>
+We have <code>\AND</code>, <code>\OR</code>, <code>\XOR</code>, <code>\NOT</code>.
+</p>
+</div>
+</li>
+<li><a id="sec-3-1-1-8" name="sec-3-1-1-8"></a>Precondition<br  /><div class="outline-text-5" id="text-3-1-1-8">
+</div>
+</li>
+
+<li><a id="sec-3-1-1-9" name="sec-3-1-1-9"></a>Postcondition<br  /><div class="outline-text-5" id="text-3-1-1-9">
+</div>
+</li>
+
+<li><a id="sec-3-1-1-10" name="sec-3-1-1-10"></a>Returning Values<br  /><div class="outline-text-5" id="text-3-1-1-10">
+<p>
+True and false values: <code>\TRUE</code> and <code>\FALSE</code>.
+</p>
+</div>
+</li>
+<li><a id="sec-3-1-1-11" name="sec-3-1-1-11"></a>Printing messages<br  /><div class="outline-text-5" id="text-3-1-1-11">
+</div>
+</li>
+
+<li><a id="sec-3-1-1-12" name="sec-3-1-1-12"></a>Comments<br  /><div class="outline-text-5" id="text-3-1-1-12">
+<p>
+For comments on the same line with <code>\IF</code> etc. constructs, use the optional argument.
+</p>
+</div>
+</li></ul>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2015-01-21</span>
+        <span title="last modification date" class="post-info">2015-01-22</span>
+        <span title="tags" class="post-info"><a href="/tags/latex/">LaTeX</a></span>
+        <span title="author" class="post-info">Xiaolong Zhang</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          //var disqus_developer = 1;
+          var disqus_identifier = "/blog/2015/01/21/LaTeX notes";
+          var disqus_url = "http://heartnheart.github.io/blog/2015/01/21/LaTeX notes";
+          var disqus_shortname = 'heartnheart';
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </section>
+      <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-61112071-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:xlzhang &lt;at&gt; cs &lt;dot&gt; hku &lt;dot&gt; hk">Xiaolong Zhang</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>
