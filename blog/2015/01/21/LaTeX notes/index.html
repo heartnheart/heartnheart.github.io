@@ -48,9 +48,15 @@ There are situations where LaTeX does not provide a command or environment that 
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 To add your own command, use
+</p>
+<p>
 <code>name</code> is the new command name, note that name <b>can not</b> contain digits. <code>num</code> specifies the number of arguments the new command takes (up to <b>9</b>). If missing it defaults to 0, i.e. no argument allowed. <code>definition</code> is the text to be replaced.
 A simple tex replacement:
+</p>
+<p>
 Commands take arguments:
+</p>
+<p>
 Note that there is no overriding function in LaTeX, so you have to give them different names even when two commands only differ in the number of arguments.
 </p>
 
@@ -60,8 +66,12 @@ Use <code>\renewcommand</code> to explicityl overwrite an existing command. Use 
 
 <p>
 If you want a default parameter for <code>\newcommand</code>, use the form
+</p>
+<p>
 This will make first argument optional, and if not specified, use the value <code>default</code>.
 For example:
+</p>
+<p>
 Some commands are <i>fragile</i>, that is they fail in some environments. If a macro works in body text but not (for example) in a figure caption, then replace the <code>\newcommand{\MyCommand}</code> with <code>\DeclareRobustCommand{\MyCommand}</code> in the preamble. This is especially true for macros which, when expanded, produce text that is written to a <code>.aux</code> file.
 </p>
 </div>
@@ -103,7 +113,10 @@ This package provides two environments, <code>algorithmic</code> and <code>algor
 This package provides a number of commands for typesettings popular algorithmic constructus. 
 </p>
 </div>
-<ul class="org-ul"><li><a id="sec-3-1-1-1" name="sec-3-1-1-1"></a>Simple Statement<br  /></li>
+<ul class="org-ul"><li><a id="sec-3-1-1-1" name="sec-3-1-1-1"></a>Simple Statement<br  /><div class="outline-text-5" id="text-3-1-1-1">
+</div>
+</li>
+
 <li><a id="sec-3-1-1-2" name="sec-3-1-1-2"></a><code>if-then-else</code><br  /><div class="outline-text-5" id="text-3-1-1-2">
 <p>
 In the third forms there is no limit placed on the number of <code>\ELSIF</code> that may be used.
@@ -116,24 +129,42 @@ You can use <code>\TO</code> connective for distinct <b>to</b> text.
 </p>
 </div>
 </li>
-<li><a id="sec-3-1-1-4" name="sec-3-1-1-4"></a><code>while</code> loop<br  /></li>
-<li><a id="sec-3-1-1-5" name="sec-3-1-1-5"></a><code>repeat-until</code> loop<br  /></li>
-<li><a id="sec-3-1-1-6" name="sec-3-1-1-6"></a>Infinit loop<br  /></li>
+<li><a id="sec-3-1-1-4" name="sec-3-1-1-4"></a><code>while</code> loop<br  /><div class="outline-text-5" id="text-3-1-1-4">
+</div>
+</li>
+
+<li><a id="sec-3-1-1-5" name="sec-3-1-1-5"></a><code>repeat-until</code> loop<br  /><div class="outline-text-5" id="text-3-1-1-5">
+</div>
+</li>
+
+<li><a id="sec-3-1-1-6" name="sec-3-1-1-6"></a>Infinit loop<br  /><div class="outline-text-5" id="text-3-1-1-6">
+</div>
+</li>
+
 <li><a id="sec-3-1-1-7" name="sec-3-1-1-7"></a>Logic connectives<br  /><div class="outline-text-5" id="text-3-1-1-7">
 <p>
 We have <code>\AND</code>, <code>\OR</code>, <code>\XOR</code>, <code>\NOT</code>.
 </p>
 </div>
 </li>
-<li><a id="sec-3-1-1-8" name="sec-3-1-1-8"></a>Precondition<br  /></li>
-<li><a id="sec-3-1-1-9" name="sec-3-1-1-9"></a>Postcondition<br  /></li>
+<li><a id="sec-3-1-1-8" name="sec-3-1-1-8"></a>Precondition<br  /><div class="outline-text-5" id="text-3-1-1-8">
+</div>
+</li>
+
+<li><a id="sec-3-1-1-9" name="sec-3-1-1-9"></a>Postcondition<br  /><div class="outline-text-5" id="text-3-1-1-9">
+</div>
+</li>
+
 <li><a id="sec-3-1-1-10" name="sec-3-1-1-10"></a>Returning Values<br  /><div class="outline-text-5" id="text-3-1-1-10">
 <p>
 True and false values: <code>\TRUE</code> and <code>\FALSE</code>.
 </p>
 </div>
 </li>
-<li><a id="sec-3-1-1-11" name="sec-3-1-1-11"></a>Printing messages<br  /></li>
+<li><a id="sec-3-1-1-11" name="sec-3-1-1-11"></a>Printing messages<br  /><div class="outline-text-5" id="text-3-1-1-11">
+</div>
+</li>
+
 <li><a id="sec-3-1-1-12" name="sec-3-1-1-12"></a>Comments<br  /><div class="outline-text-5" id="text-3-1-1-12">
 <p>
 For comments on the same line with <code>\IF</code> etc. constructs, use the optional argument.

@@ -30,6 +30,69 @@
 <div>
 <div class="post">
 <h1>Untitled</h1>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Trajopt</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">dubins<sub>car</sub>.cpp</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="org-src-container">
+
+<pre class="src src-c++">RobotAndDOFPtr rad(
+                   new RobotAndDOF(robot, vector&lt;int&gt;(), 11, OR::Vector(0, 0, 1)));
+</pre>
+</div>
+<ol class="org-ol">
+<li>11 stands for the enum OpenRAVE::DOFAffine value, the doc is found at <a href="http://openrave.org/docs/latest_stable/coreapihtml/namespaceOpenRAVE.html#abc0e247f60308de4073a64d487acfef6ae01613d409bfeac95cd6eea0c396c0f9">OpenRAVE::DOFAffine</a>. However, the author use a magic number here, by checking the <a href="http://openrave.org/docs/latest_stable/coreapihtml/openrave_8h_source.html#l02347">souce code</a>, I found that 11 stands for <code>DOF_X|DOF_Y|DOF_RotationAxis</code>, which means the robot can move in the x and y direction, and can rotate around an axis.
+</li>
+<li>The fourth argument <code>OR::Vector(0, 0, 1)</code> is the rotation axis of the robot.
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Openrave</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">OpenRAVE::Transform</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+This is a typedef of openrave type <code>RaveTransform</code>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-cpp">typedef RaveTransform&lt;dReal&gt; Transform;
+</pre>
+</div>
+<p>
+In <code>RaveTransform</code> class, the public attributes <code>rot</code> is a quaternion, as pointed out <a href="http://openrave.org/docs/latest_stable/coreapihtml/classOpenRAVE_1_1geometry_1_1RaveTransform.html">here</a>.
+</p>
+
+<p>
+The function <code>RaveGetTransformFromAffineDOFValues</code> converts affine dof values into a transform, with the doc <a href="http://openrave.org/docs/latest_stable/coreapihtml/namespaceOpenRAVE.html#a87734b13e3ec140e302d750a9429e4ec">here</a>.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2">OpenRave::Kinbody::SetTransform(const Transform&amp; transform)</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+set the transform of the first link (the rest of the links are computed based on the joint values). The doc is <a href="http://openrave.org/docs/latest_stable/coreapihtml/classOpenRAVE_1_1KinBody.html#ae4e529e3bab78c4399ecc387f6ccd59b">here</a>.
+</p>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Mindmap</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1">RobotAndDOF</h3>
+</div>
+</div>
 
 </div>
 </div>
