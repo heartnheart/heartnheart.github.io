@@ -4,8 +4,8 @@
     <title>org-page</title>
     <link>http://heartnheart.github.io/</link>
     <description>static site generator</description>
-    <pubDate>Fri, 17 Apr 2015 15:09:49 HKT</pubDate>
-    <lastBuildDate>Fri, 17 Apr 2015 15:09:49 HKT</lastBuildDate>
+    <pubDate>Fri, 17 Apr 2015 15:13:46 HKT</pubDate>
+    <lastBuildDate>Fri, 17 Apr 2015 15:13:46 HKT</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
     <item>
@@ -16,11 +16,11 @@
       <guid>http://heartnheart.github.io/blog/2015/04/17/untitled/</guid>
     </item>
     <item>
-      <title>Untitled</title>
-      <link>http://heartnheart.github.io/blog/2015/04/17/untitled/</link>
-      <description>No Description</description>
+      <title>Trajopt Notes</title>
+      <link>http://heartnheart.github.io/blog/2015/04/17/Trajopt Notes</link>
+      <description>Note for Trajopt project</description>
       <pubDate>2015-04-17</pubDate>
-      <guid>http://heartnheart.github.io/blog/2015/04/17/untitled/</guid>
+      <guid>http://heartnheart.github.io/blog/2015/04/17/Trajopt Notes</guid>
     </item>
     <item>
       <title>Untitled</title>
