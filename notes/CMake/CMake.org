@@ -17,6 +17,9 @@ cmake_minimum_required(VERSION major[.minor[.patch[.tweak]]]
                        [FATAL_ERROR])
 #+end_example
 
-
+1. This command set the minimum required version of CMake for a probject.
+2. =VERSION= is a must in this command.
+3. =FATAL_ERROR= is optional, but it shoud be specified so CMake version 2.4 and
+   lower can fail with an error instead of just a warning.
 * CMake Build System
 
