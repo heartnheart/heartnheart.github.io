@@ -9,3 +9,14 @@
 #+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
 #+DESCRIPTION: Notes for CMake
 
+* CMake Commands
+** add_library
+** cmake_minimum_required
+#+begin_example
+cmake_minimum_required(VERSION major[.minor[.patch[.tweak]]]
+                       [FATAL_ERROR])
+#+end_example
+
+
+* CMake Build System
+
