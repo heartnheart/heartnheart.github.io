@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Boost Python and GCC fvisibility option - org-page</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Xiaolong Zhang" />
+    <meta name="description" content="This blog records the problem I encounter with Boost.Python" />
+    <meta name="keywords" content="Boost, Python, GCC" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">org-page</a></h1>
+        <p>static site generator</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/notes/">Notes</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/kelvinh/org-page">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="http://www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="heartnheart.github.io">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>Boost Python and GCC fvisibility option</h1>
+<p>
+I'm working on a robot project related to collision detection recently. The work
+is based on the code of <a href="http://rll.berkeley.edu/trajopt/doc/sphinx_build/html/">Trajopt</a> and we use python to do some mix programming.
+</p>
+
+<p>
+The main framework is written in Python and we need to call some C++ function in
+the middle, which in turn needs to call some Python functions as subroutine. 
+</p>
+
+<p>
+The process is so difficult as described on <a href="http://stackoverflow.com/questions/4331599/calling-python-functions-from-c">stackoverflow</a>.
+</p>
+
+<p>
+In C++, declare a Boost Python Object and a register function
+</p>
+<div class="org-src-container">
+
+<pre class="src src-c++"><span class="org-preprocessor">#include</span> <span class="org-string">&lt;boost/python.hpp&gt;</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;iostream&gt;</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;Bar.h&gt;</span>
+<span class="org-keyword">namespace</span> <span class="org-constant">bp</span> = <span class="org-constant">boost</span>::python;
+<span class="org-keyword">using</span> <span class="org-keyword">namespace</span> <span class="org-constant">std</span>;
+<span class="org-constant">bp</span>::<span class="org-type">object</span> <span class="org-variable-name">foo</span>;
+
+<span class="org-type">void</span> <span class="org-function-name">register_foo</span>(<span class="org-constant">bp</span>::<span class="org-type">object</span> <span class="org-variable-name">f</span>)
+{
+  foo = f;
+}
+
+<span class="org-function-name">BOOST_PYTHON_MODULE</span>(testmod)
+{
+  <span class="org-constant">bp</span>::def(<span class="org-string">"register_foo"</span>, &amp;register_foo, <span class="org-string">"Register the callback from Python"</span>);
+}
+</pre>
+</div>
+
+<p>
+In Python, register the callback function.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span class="org-keyword">import</span> testmod
+<span class="org-keyword">def</span> <span class="org-function-name">callback</span>(val):
+<span class="org-highlight-indentation"><span class="org-highlight-indentation"> </span></span>   <span class="org-keyword">print</span> <span class="org-string">"I'm in Python!"</span>, <span class="org-string">"Argument = "</span>, val
+<span class="org-highlight-indentation"><span class="org-highlight-indentation"> </span></span>   <span class="org-keyword">return</span> val
+testmod.register_foo(callback)
+</pre>
+</div>
+
+<p>
+Then in C++, you can write a call back function as follows.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-c++"><span class="org-type">void</span> <span class="org-function-name">test_foo</span>()
+{
+  <span class="org-type">double</span> <span class="org-variable-name">arg</span> = 3;
+  <span class="org-type">double</span> <span class="org-variable-name">rt</span> = <span class="org-constant">bp</span>::<span class="org-type">extract</span>&lt;<span class="org-type">double</span>&gt;(<span class="org-variable-name">foo</span>(arg));
+}
+</pre>
+</div>
+
+<p>
+The problem occurred when I want to call the <code>foo</code> function in other C++ cpp
+file. If you have any experience in Boost.Python, it won't surprise you that
+there is one cpp file that is compiled and linked to generate the dynamic
+library to be imported in Python. Suppose the file is named <code>A.cpp</code> and my
+callback function <code>foo</code> is registered in <code>A.cpp</code> as well.
+</p>
+
+<p>
+It works like a charm when I call <code>foo</code> inside <code>A.cpp</code> only. But once I call it
+in <code>B.cpp</code>, the Python interpreter crashes complaining that <code>foo</code> is <code>Nonetype</code>
+thus not callable.
+</p>
+
+<p>
+I really hope it's a compilation error which is easier to ask Google but it's a
+runtime one with little helpful information. After checking all the materials I
+can find on web, I surrendered and preparing to ask on fabulous stackoverflow.
+To ask the problem, I need to prepare a minimal example that won't work.
+However, when I actually prepared one, it worked! So I guess there maybe
+something wrong with the compilation process and checking the <code>CMakeLists.txt</code>
+in trajopt line by line. Finally I found one line that is suspicious:
+</p>
+<pre class="example">
+if (NOT APPLE)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden") 
+endif()
+</pre>
+<p>
+By commenting out this line, the problem is solved.
+</p>
+
+<p>
+I'm rather curious about the reason behind since it wastes me so much time. 
+</p>
+
+<p>
+The reason is that dynamic library on Linux (<code>*.so</code> files) is different with
+those (<code>*.dll</code>) on Windows where <code>*.so</code> files exports all the symbols by
+default. This greatly increases the import time when importing a large module
+generated by Boost.Python. So GCC provide the <code>-fvisibility</code> option to hide all
+symbols by default so my <code>foo</code> variable can't be accessed in <code>B.cpp</code> file.
+</p>
+
+<p>
+Reader may argue that I need to consider the symbol exporting reason since I'm
+using a dynamic library instead of static. Oh, I never export my own code as
+dynamic libraries but always link them as static :)
+</p>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2015-04-21</span>
+        <span title="last modification date" class="post-info">2015-04-21</span>
+        <span title="tags" class="post-info"><a href="/tags/boost/">Boost</a> <a href="/tags/python/">Python</a> <a href="/tags/gcc/">GCC</a></span>
+        <span title="author" class="post-info">Xiaolong Zhang</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          //var disqus_developer = 1;
+          var disqus_identifier = "/blog/2015/04/21/boost-python-and-gcc-fvisibility-option";
+          var disqus_url = "http://heartnheart.github.io/blog/2015/04/21/boost-python-and-gcc-fvisibility-option";
+          var disqus_shortname = 'heartnheart';
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </section>
+      <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-61112071-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:xlzhang &lt;at&gt; cs &lt;dot&gt; hku &lt;dot&gt; hk">Xiaolong Zhang</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>
