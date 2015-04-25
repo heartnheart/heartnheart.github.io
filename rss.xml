@@ -4,10 +4,17 @@
     <title>org-page</title>
     <link>http://heartnheart.github.io/</link>
     <description>static site generator</description>
-    <pubDate>Tue, 21 Apr 2015 02:11:31 HKT</pubDate>
-    <lastBuildDate>Tue, 21 Apr 2015 02:11:31 HKT</lastBuildDate>
+    <pubDate>Sat, 25 Apr 2015 21:30:16 HKT</pubDate>
+    <lastBuildDate>Sat, 25 Apr 2015 21:30:16 HKT</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
+    <item>
+      <title>Code::Blocks 13.12 bug on Mac OS X</title>
+      <link>http://heartnheart.github.io/blog/2015/04/25/code-blocks-13.12-bug-on-mac-os-x</link>
+      <description>This blog describe a bug on Mac OS X with Code::Blocks 13.12</description>
+      <pubDate>2015-04-25</pubDate>
+      <guid>http://heartnheart.github.io/blog/2015/04/25/code-blocks-13.12-bug-on-mac-os-x</guid>
+    </item>
     <item>
       <title>Boost Python and GCC fvisibility option</title>
       <link>http://heartnheart.github.io/blog/2015/04/21/boost-python-and-gcc-fvisibility-option</link>
@@ -70,13 +77,6 @@
       <description>Notes about python</description>
       <pubDate>2015-02-01</pubDate>
       <guid>http://heartnheart.github.io/blog/2015/01/30/Python Notes</guid>
-    </item>
-    <item>
-      <title>Algorithms</title>
-      <link>http://heartnheart.github.io/blog/2015/01/29/Algorithms</link>
-      <description>Notes about my learning Algorithms on Coursera</description>
-      <pubDate>2015-01-30</pubDate>
-      <guid>http://heartnheart.github.io/blog/2015/01/29/Algorithms</guid>
     </item>
   </channel>
 </rss>
