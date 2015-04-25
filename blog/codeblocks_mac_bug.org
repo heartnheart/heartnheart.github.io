@@ -1,0 +1,32 @@
+#+TITLE:       Code::Blocks 13.12 bug on Mac OS X
+#+AUTHOR:      Xiaolong Zhang
+#+EMAIL:       xlzhang@cs.hku.hk
+#+DATE:        2015-04-25 Sat
+#+URI:         /blog/%y/%m/%d/code-blocks-13.12-bug-on-mac-os-x
+#+KEYWORDS:    Code::Blocks
+#+TAGS:        Code::Blocks
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+#+DESCRIPTION: This blog describe a bug on Mac OS X with Code::Blocks 13.12
+
+When using Code::Blocks, if you read a file using the following code:
+#+begin_src cpp
+  ifstream ifs("input.txt")
+#+end_src
+Then you =input.txt= should be the same directory as the executable file.
+However, students using Mac OS report that they can't not find the file using
+Code::Blocks.
+
+The reason is that Code::Blocks didn't change the =current directory= to the
+directory of the executable, but keep it remain in the home directory. A quick
+fix could be going to =Settings= -> =Environment= and change the =Terminal to
+launch console programs= to the following line:
+#+begin_example
+osascript -e 'tell app "Terminal"' -e 'activate' -e 'do script "exe=\'$SCRIPT\'; cd \\"${exe%/*}\\"; clear; \\"${exe% }\\""' -e 'end tell'
+#+end_example
+
+However, as the [[http://www.codeblocks.org/downloads/26][download page]] of Code::Blocks for Mac said, *Code::Blocks for
+Mac is currently not as stable as are other ports, especially on Mountain Lion.*
+So using it on Mac is not recommended.
+
+
