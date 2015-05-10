@@ -15,6 +15,7 @@
 * Info
 URL is https://class.coursera.org/ml-005/lecture
 
+
 * Introduciton 
 ** What is machine learning
 - Arthur Samuel (1959): *Field of study of that gives computers the ability to learn without being explicitly programmed.* 
