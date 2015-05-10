@@ -1,37 +1,196 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <title>Stanford Machine Learning Notes - org-page</title>
-    <meta charset="utf-8" />
-    <meta name="author" content="Xiaolong Zhang" />
-    <meta name="description" content="This is the notes when I&#39;m learning Stanford Machine Learning on Coursera" />
-    <meta name="keywords" content="Machine Learning,notes" />
-    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
-    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
-  </head>
-  <body class="container">
-    <div>
-      <header class="masthead">
-        <h1 class="masthead-title"><a href="/">org-page</a></h1>
-        <p>static site generator</p>
-        <ul>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/notes/">Notes</a></li>
-          <li><a href="/tags/">Tags</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="https://github.com/kelvinh/org-page">GitHub</a></li>
-          <li><a href="/rss.xml">RSS</a></li>
-        </ul>
-        <form method="get" id="searchform" action="http://www.google.com/search">
-          <input type="text" class="field" name="q" id="s" placeholder="Search">
-          <input type="hidden" name="as_sitesearch" value="heartnheart.github.io">
-        </form>
-      </header>
-    </div>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Stanford Machine Learning Notes</title>
+<!-- 2015-05-10 Sun 20:45 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Xiaolong Zhang" />
+<meta  name="description" content="This is the notes when I'm learning Stanford Machine Learning on Coursera"
+ />
+<meta  name="keywords" content="Machine Learning,notes" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
 
-<div>
-<div class="post">
-<h1>Stanford Machine Learning Notes</h1>
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css"
+href="http://sachachua.com/blog/wp-content/themes/sacha-v3/foundation/css/foundation.min.css"></link>
+<link rel="stylesheet" type="text/css" href="http://sachachua.com/org-export.css"></link>
+<link rel="stylesheet" type="text/css" href="http://sachachua.com/blog/wp-content/themes/sacha-v3/style.css"></link>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+            config: ["MMLorHTML.js"], jax: ["input/TeX"],
+        //  jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<a name="top" id="top"></a>
+</div>
+<div id="content">
+<h1 class="title">Stanford Machine Learning Notes</h1>
 <div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1">Info</h2>
 <div class="outline-text-2" id="text-1">
@@ -40,7 +199,6 @@ URL is <a href="https://class.coursera.org/ml-005/lecture">https://class.courser
 </p>
 </div>
 </div>
-
 
 <div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2">Introduciton</h2>
@@ -84,14 +242,14 @@ And <b>Practical advice for applying learning algorithm</b>
 <ul class="org-ul"><li><a id="sec-2-2-1-1" name="sec-2-2-1-1"></a>Regression (Housing price prediction)<br  /><div class="outline-text-5" id="text-2-2-1-1">
 <p>
 Predict continuous valued output (price)
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-01.png" alt="screenshot-01.png" />
+<img src="./images/screenshot-01.png" alt="screenshot-01.png" />
 </p>
 </div>
 </li>
 <li><a id="sec-2-2-1-2" name="sec-2-2-1-2"></a>Classification (Breast cancer (malignant, benign)<br  /><div class="outline-text-5" id="text-2-2-1-2">
 <p>
 Discrete valued output (0 or 1)
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-02.png" alt="screenshot-02.png" />
+<img src="./images/screenshot-02.png" alt="screenshot-02.png" />
 </p>
 </div>
 </li></ul>
@@ -107,7 +265,7 @@ No knowledge is given.
 <ul class="org-ul"><li><a id="sec-2-2-2-1" name="sec-2-2-2-1"></a>Google News Grouping<br  /><div class="outline-text-5" id="text-2-2-2-1">
 
 <div class="figure">
-<p><img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-03.png" alt="screenshot-03.png" />
+<p><img src="./images/screenshot-03.png" alt="screenshot-03.png" />
 </p>
 </div>
 </div>
@@ -115,7 +273,7 @@ No knowledge is given.
 <li><a id="sec-2-2-2-2" name="sec-2-2-2-2"></a>Cocktail party problem<br  /><div class="outline-text-5" id="text-2-2-2-2">
 
 <div class="figure">
-<p><img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-04.png" alt="screenshot-04.png" />
+<p><img src="./images/screenshot-04.png" alt="screenshot-04.png" />
 </p>
 </div>
 </div>
@@ -206,12 +364,12 @@ In order to visualize our cost function, we use a simplified hypothesis function
 
 <p>
 So now let's compare function \(h_\theta (x)\) and function \(J(\theta_1)\):
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-05.png" alt="screenshot-05.png" />
+<img src="./images/screenshot-05.png" alt="screenshot-05.png" />
 </p>
 
 <p>
 Then let's come back to the original function, where we don't have the constrain that \(\theta_0 = 0\). The comparison is like
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-06.png" alt="screenshot-06.png" />
+<img src="./images/screenshot-06.png" alt="screenshot-06.png" />
 </p>
 </div>
 </div>
@@ -230,14 +388,14 @@ Now we have some function \(J(\theta_0,\theta_1)\) and we want to \(\underset{\t
 
 <p>
 To help understand gradient descent, suppose you are standing at one point on the hill, and you want to take a small step to step downhill as quickly as possible, then you would choose the deepest direction to downhill.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-07.png" alt="screenshot-07.png" />
+<img src="./images/screenshot-07.png" alt="screenshot-07.png" />
 You keep doing this until to get to a local minimum.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-08.png" alt="screenshot-08.png" />
+<img src="./images/screenshot-08.png" alt="screenshot-08.png" />
 </p>
 
 <p>
 But if you start with a different initial position, gradient descent will take you to a (very) different position.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-08.png" alt="screenshot-08.png" />
+<img src="./images/screenshot-08.png" alt="screenshot-08.png" />
 </p>
 </div>
 <div id="outline-container-sec-3-4-1" class="outline-4">
@@ -255,18 +413,18 @@ The \(\alpha\) here is called learning rate.
 
 <p>
 Pay attention that when implementing gradient descent, we need to update all \(\theta\text{s}\) simultaneous.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-10.png" alt="screenshot-10.png" />
+<img src="./images/screenshot-10.png" alt="screenshot-10.png" />
 </p>
 
 <p>
 Recall that \(\alpha\) is a called the learning rate, which is actually a scale factor to our step represented by the derivative term. Take a 1D case as an example, the derivative is the direction (slop of the tanget line) where the function value becomes larger, so we should take its negative as our step.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-11.png" alt="screenshot-11.png" />
+<img src="./images/screenshot-11.png" alt="screenshot-11.png" />
 </p>
 
 
 <p>
 If \(\alpha\) is too small, gradient descent can be slow. If \(\alpha\) is too large, gradient can overshoot the minimum. It may fail to converge, or even diverge.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-12.png" alt="screenshot-12.png" />
+<img src="./images/screenshot-12.png" alt="screenshot-12.png" />
 </p>
 
 
@@ -298,7 +456,7 @@ This lecture use 1-indexed subscripts.
 <h3 id="sec-5-1">Multiple Features</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-13.png" alt="screenshot-13.png" />
+<img src="./images/screenshot-13.png" alt="screenshot-13.png" />
 Notation:
 </p>
 <ol class="org-ol">
@@ -330,7 +488,7 @@ where \(\theta\) is a \(n+1\) dimension vector.
 <div class="outline-text-3" id="text-5-2">
 <p>
 So now our new algorithm becomes
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-14.png" alt="screenshot-14.png" />
+<img src="./images/screenshot-14.png" alt="screenshot-14.png" />
 Note that our new algorithm for \(\theta_0\) is just like the old one since \(x_0^{(i)} \) is 1.
 </p>
 </div>
@@ -344,9 +502,9 @@ Idea: Make sure features are on a similar scale, then gradient descent will conv
 
 <p>
 Take a 2D example,  if the dimension of \(x_1\) is much larger than the dimension of \(x_2\), then the search region is a long ellipsis shape which is make gradient much difficult to find the minimum.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-15.png" alt="screenshot-15.png" />
+<img src="./images/screenshot-15.png" alt="screenshot-15.png" />
 We can rescale all features to [0,1] so the contours now become a circle.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-16.png" alt="screenshot-16.png" />
+<img src="./images/screenshot-16.png" alt="screenshot-16.png" />
 </p>
 
 <p>
@@ -364,7 +522,7 @@ Mean normalization: Replace \(x_i\) with \(x_i - \mu_i\) to make features have a
 <div class="outline-text-3" id="text-5-4">
 <p>
 To make sure gradient descent is working correctly, draw the figure the value of \(J(\theta)\) versus the number of iterations.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-17.png" alt="screenshot-17.png" />
+<img src="./images/screenshot-17.png" alt="screenshot-17.png" />
 </p>
 
 <p>
@@ -377,17 +535,17 @@ For sufficiently small \(\alpha\), \(J(\theta\) should decrease on every iterati
 <div class="outline-text-3" id="text-5-5">
 <p>
 You need to choose a good feature instead of just using what you're provided. For example, for housing price prediction, you are provided with the frontage and depth feature, you can define a feature called area = frontage x depth.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-18.png" alt="screenshot-18.png" />
+<img src="./images/screenshot-18.png" alt="screenshot-18.png" />
 </p>
 
 <p>
 Or sometimes use a polynomial function would be better. If the feature is not enough, you could use size, size^2, size^3 as features.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-18.png" alt="screenshot-18.png" />
+<img src="./images/screenshot-18.png" alt="screenshot-18.png" />
 </p>
 
 <p>
 Or you can use square root as feature.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-19.png" alt="screenshot-19.png" />
+<img src="./images/screenshot-19.png" alt="screenshot-19.png" />
 How to find the minimum of \(J(\theta)\) analytically?
 </p>
 
@@ -397,7 +555,7 @@ By Calculus, we can take the partial derivatives of each variable, and set it to
 
 <p>
 Normal Equation:
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-22.png" alt="screenshot-22.png" />
+<img src="./images/screenshot-22.png" alt="screenshot-22.png" />
 Then we can compute \(\theta = (X^T X)^{-1} X^T y\)
 The Octave code is:
 </p>
@@ -408,7 +566,7 @@ The Octave code is:
 </div>
 <p>
 Compare Gradient Descent with Normal Equation.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-20.png" alt="screenshot-20.png" />
+<img src="./images/screenshot-20.png" alt="screenshot-20.png" />
 </p>
 </div>
 </div>
@@ -508,7 +666,7 @@ help eye
 
 
 <div class="figure">
-<p><img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/chart.png" alt="/assets/blog/2015/01/16/Stanford Machine Learning Notes/chart.png" />
+<p><img src="chart.png" alt="chart.png" />
 </p>
 </div>
 </div>
@@ -707,7 +865,7 @@ i <span class="org-builtin">=</span> 1<span class="org-builtin">;</span>
 <div class="outline-text-3" id="text-7-1">
 <p>
 Applying linear regression to a classification problem is not a good idea.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-23.png" alt="screenshot-23.png" />
+<img src="./images/screenshot-23.png" alt="screenshot-23.png" />
 </p>
 
 <p>
@@ -717,7 +875,7 @@ the hypothesis will change. Besides, the return value for h_&amp;theta;(x) could
 not in the range [0, 1], thus making the prediction rather confusing. Logistic
 Regression, though the word regression, is used to do the classification job and
 the hypothesis can be guaranteed in the range [0,1].
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-24.png" alt="screenshot-24.png" />
+<img src="./images/screenshot-24.png" alt="screenshot-24.png" />
 </p>
 </div>
 </div>
@@ -730,7 +888,7 @@ the hypothesis can be guaranteed in the range [0,1].
 <p>
 We set \(h_\theta(x) = g(\theta^Tx)\), where \(g(z) = \frac{1}{1+e^{-z}}\). The \(g\)
 function is called <b>Sigmoid function</b> as well as <b>Logistic function</b>.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-25.png" alt="screenshot-25.png" />
+<img src="./images/screenshot-25.png" alt="screenshot-25.png" />
 </p>
 </div>
 </div>
@@ -740,7 +898,7 @@ function is called <b>Sigmoid function</b> as well as <b>Logistic function</b>.
 <p>
 You can think of \(h_\theta(x)\) as the estimated probability that \(y = 1\) on
 input \(x\).
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-26.png" alt="screenshot-26.png" />
+<img src="./images/screenshot-26.png" alt="screenshot-26.png" />
 </p>
 </div>
 </div>
@@ -764,7 +922,7 @@ Since \(g(z) \geq 0.5\) when \(z \geq 0.5\), which means that \(h_\theta(x) \geq
 <p>
 How to fit the parameters &theta; for Logistic Regression?
 We define the cost function as below since \(h_\theta(x)\) is in the range [0,1].
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-27.png" alt="screenshot-27.png" />
+<img src="./images/screenshot-27.png" alt="screenshot-27.png" />
 </p>
 </div>
 </div>
@@ -773,17 +931,17 @@ We define the cost function as below since \(h_\theta(x)\) is in the range [0,1]
 <div class="outline-text-3" id="text-7-5">
 <p>
 Remember that the Logistic regression cost function is in two parts, since y can be 0 or 1 only,  we can write the cost function in a new way:
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-28.png" alt="screenshot-28.png" />
+<img src="./images/screenshot-28.png" alt="screenshot-28.png" />
 </p>
 
 <p>
 Remember that gradient descent is like:
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-29.png" alt="screenshot-29.png" />
+<img src="./images/screenshot-29.png" alt="screenshot-29.png" />
 </p>
 
 <p>
 where the partial derivatives is like:
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-30.png" alt="screenshot-30.png" />
+<img src="./images/screenshot-30.png" alt="screenshot-30.png" />
 </p>
 </div>
 </div>
@@ -792,13 +950,13 @@ where the partial derivatives is like:
 <div class="outline-text-3" id="text-7-6">
 
 <div class="figure">
-<p><img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-31.png" alt="screenshot-31.png" />
+<p><img src="./images/screenshot-31.png" alt="screenshot-31.png" />
 </p>
 </div>
 
 <p>
 Note that the Octave start from 1 instead of 0.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-32.png" alt="screenshot-32.png" />
+<img src="./images/screenshot-32.png" alt="screenshot-32.png" />
 </p>
 </div>
 </div>
@@ -811,14 +969,14 @@ One-vs-all is also called one-vs-rest.
 
 
 <div class="figure">
-<p><img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-33.png" alt="screenshot-33.png" />
+<p><img src="./images/screenshot-33.png" alt="screenshot-33.png" />
 </p>
 </div>
 
 
 <p>
 The method is:
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-34.png" alt="screenshot-34.png" />
+<img src="./images/screenshot-34.png" alt="screenshot-34.png" />
 </p>
 </div>
 </div>
@@ -831,24 +989,24 @@ The method is:
 <div class="outline-text-3" id="text-8-1">
 
 <div class="figure">
-<p><img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-35.png" alt="screenshot-35.png" />
+<p><img src="./images/screenshot-35.png" alt="screenshot-35.png" />
 </p>
 </div>
 
 
 <div class="figure">
-<p><img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-36.png" alt="screenshot-36.png" />
+<p><img src="./images/screenshot-36.png" alt="screenshot-36.png" />
 </p>
 </div>
 
 <p>
 For Logistic regression:
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-37.png" alt="screenshot-37.png" />
+<img src="./images/screenshot-37.png" alt="screenshot-37.png" />
 </p>
 
 <p>
 How to solve the problem?
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-38.png" alt="screenshot-38.png" />
+<img src="./images/screenshot-38.png" alt="screenshot-38.png" />
 </p>
 </div>
 </div>
@@ -856,21 +1014,21 @@ How to solve the problem?
 <h3 id="sec-8-2">Cost Function</h3>
 <div class="outline-text-3" id="text-8-2">
 <p>
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-39.png" alt="screenshot-39.png" />
+<img src="./images/screenshot-39.png" alt="screenshot-39.png" />
 The idea behind regulation is that:
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-40.png" alt="screenshot-40.png" />
+<img src="./images/screenshot-40.png" alt="screenshot-40.png" />
 Note that we didn't penalize &theta;_0
 </p>
 
 
 <div class="figure">
-<p><img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-41.png" alt="screenshot-41.png" />
+<p><img src="./images/screenshot-41.png" alt="screenshot-41.png" />
 </p>
 </div>
 
 <p>
 What if &lambda; is too large?
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-42.png" alt="screenshot-42.png" />
+<img src="./images/screenshot-42.png" alt="screenshot-42.png" />
 </p>
 </div>
 </div>
@@ -879,13 +1037,13 @@ What if &lambda; is too large?
 <div class="outline-text-3" id="text-8-3">
 
 <div class="figure">
-<p><img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-43.png" alt="screenshot-43.png" />
+<p><img src="./images/screenshot-43.png" alt="screenshot-43.png" />
 </p>
 </div>
 
 <p>
 When using normal equation:
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-44.png" alt="screenshot-44.png" />
+<img src="./images/screenshot-44.png" alt="screenshot-44.png" />
 </p>
 </div>
 </div>
@@ -894,7 +1052,7 @@ When using normal equation:
 <div class="outline-text-3" id="text-8-4">
 <p>
 Now update &theta;_0 separately
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-45.png" alt="screenshot-45.png" />
+<img src="./images/screenshot-45.png" alt="screenshot-45.png" />
 </p>
 </div>
 </div>
@@ -907,7 +1065,7 @@ Now update &theta;_0 separately
 <div class="outline-text-3" id="text-9-1">
 <p>
 Use quadratic features will results in a lot of features.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-46.png" alt="screenshot-46.png" />
+<img src="./images/screenshot-46.png" alt="screenshot-46.png" />
 </p>
 </div>
 </div>
@@ -924,18 +1082,18 @@ There is one learning algorithm of the brain
 <div class="outline-text-3" id="text-9-3">
 <p>
 Neuron model: Logistic unit
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-47.png" alt="screenshot-47.png" />
+<img src="./images/screenshot-47.png" alt="screenshot-47.png" />
 </p>
 
 <p>
 Neural Network is a group of this neural.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-48.png" alt="screenshot-48.png" />
+<img src="./images/screenshot-48.png" alt="screenshot-48.png" />
 </p>
 
 
 
 <div class="figure">
-<p><img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-49.png" alt="screenshot-49.png" />
+<p><img src="./images/screenshot-49.png" alt="screenshot-49.png" />
 </p>
 </div>
 </div>
@@ -945,18 +1103,18 @@ Neural Network is a group of this neural.
 <div class="outline-text-3" id="text-9-4">
 <p>
 Forward propagation: Vectorized implementation
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-50.png" alt="screenshot-50.png" />
+<img src="./images/screenshot-50.png" alt="screenshot-50.png" />
 </p>
 
 <p>
 Bias unit:
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-51.png" alt="screenshot-51.png" />
+<img src="./images/screenshot-51.png" alt="screenshot-51.png" />
 </p>
 
 <p>
 The last layer is like Logistic Regression, but Neural Network learning its own
 features.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-52.png" alt="screenshot-52.png" />
+<img src="./images/screenshot-52.png" alt="screenshot-52.png" />
 </p>
 </div>
 </div>
@@ -965,7 +1123,7 @@ features.
 <div class="outline-text-3" id="text-9-5">
 <p>
 OR Function
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-53.png" alt="screenshot-53.png" />
+<img src="./images/screenshot-53.png" alt="screenshot-53.png" />
 </p>
 </div>
 </div>
@@ -974,18 +1132,18 @@ OR Function
 <div class="outline-text-3" id="text-9-6">
 <p>
 NOT Function
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-54.png" alt="screenshot-54.png" />
+<img src="./images/screenshot-54.png" alt="screenshot-54.png" />
 </p>
 
 <p>
 The input layer has only x_1 and x_2. The second layer compute the feature (x_1 AND x_2), and the feature (NOT x_1) AND (NOT x_2). The third layer use the feature computed in layer 2 and do an OR operation to simulates a XNOR operation.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-55.png" alt="screenshot-55.png" />
+<img src="./images/screenshot-55.png" alt="screenshot-55.png" />
 </p>
 
 
 <p>
 Handwritten digit classification
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-56.png" alt="screenshot-56.png" />
+<img src="./images/screenshot-56.png" alt="screenshot-56.png" />
 </p>
 </div>
 </div>
@@ -994,7 +1152,7 @@ Handwritten digit classification
 <div class="outline-text-3" id="text-9-7">
 <p>
 Use an extension of the One-vs-all method.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-57.png" alt="screenshot-57.png" />
+<img src="./images/screenshot-57.png" alt="screenshot-57.png" />
 </p>
 </div>
 </div>
@@ -1007,13 +1165,13 @@ Use an extension of the One-vs-all method.
 <div class="outline-text-3" id="text-10-1">
 
 <div class="figure">
-<p><img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-58.png" alt="screenshot-58.png" />
+<p><img src="./images/screenshot-58.png" alt="screenshot-58.png" />
 </p>
 </div>
 
 <p>
 This is the cost function
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-59.png" alt="screenshot-59.png" />
+<img src="./images/screenshot-59.png" alt="screenshot-59.png" />
 </p>
 </div>
 </div>
@@ -1022,24 +1180,24 @@ This is the cost function
 <div class="outline-text-3" id="text-10-2">
 <p>
 Forward Propagation, computing all the activations:
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-60.png" alt="screenshot-60.png" />
+<img src="./images/screenshot-60.png" alt="screenshot-60.png" />
 </p>
 
 <p>
 Backpropagation algorithm, computing the gradient:
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-61.png" alt="screenshot-61.png" />
+<img src="./images/screenshot-61.png" alt="screenshot-61.png" />
 </p>
 
 
 <div class="figure">
-<p><img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-62.png" alt="screenshot-62.png" />
+<p><img src="./images/screenshot-62.png" alt="screenshot-62.png" />
 </p>
 </div>
 
 <p>
 The name "back" comes from the order we compute the "error"
 Backpropagation algorithm
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-63.png" alt="screenshot-63.png" />
+<img src="./images/screenshot-63.png" alt="screenshot-63.png" />
 </p>
 </div>
 </div>
@@ -1047,8 +1205,8 @@ Backpropagation algorithm
 <h3 id="sec-10-3">Backpropagation Intuition</h3>
 <div class="outline-text-3" id="text-10-3">
 <p>
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-64.png" alt="screenshot-64.png" />
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-65.png" alt="screenshot-65.png" />
+<img src="./images/screenshot-64.png" alt="screenshot-64.png" />
+<img src="./images/screenshot-65.png" alt="screenshot-65.png" />
 </p>
 </div>
 </div>
@@ -1058,7 +1216,7 @@ Backpropagation algorithm
 <div class="outline-text-3" id="text-10-4">
 <p>
 In Neural Network our parameters are matrices, and we need to unroll it into vectors.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-66.png" alt="screenshot-66.png" />
+<img src="./images/screenshot-66.png" alt="screenshot-66.png" />
 </p>
 </div>
 </div>
@@ -1083,7 +1241,7 @@ Zero Initialization will result in identical values.
 
 <p>
 To solve this problem, we use random initialization to break the symmerty.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-69.png" alt="screenshot-69.png" />
+<img src="./images/screenshot-69.png" alt="screenshot-69.png" />
 </p>
 </div>
 </div>
@@ -1092,14 +1250,14 @@ To solve this problem, we use random initialization to break the symmerty.
 <div class="outline-text-3" id="text-10-7">
 
 <div class="figure">
-<p><img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-70.png" alt="screenshot-70.png" />
+<p><img src="./images/screenshot-70.png" alt="screenshot-70.png" />
 </p>
 </div>
 
 <p>
 How to train a neural network
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-71.png" alt="screenshot-71.png" />
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-72.png" alt="screenshot-72.png" />
+<img src="./images/screenshot-71.png" alt="screenshot-71.png" />
+<img src="./images/screenshot-72.png" alt="screenshot-72.png" />
 </p>
 </div>
 </div>
@@ -1143,15 +1301,15 @@ We can evaluate our hypothesis by separate our date into training set and test s
 <div class="outline-text-3" id="text-11-3">
 
 <div class="figure">
-<p><img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-73.png" alt="screenshot-73.png" />
+<p><img src="./images/screenshot-73.png" alt="screenshot-73.png" />
 </p>
 </div>
 
 <p>
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-74.png" alt="screenshot-74.png" />
+<img src="./images/screenshot-74.png" alt="screenshot-74.png" />
 To address this problem, we divide our data set into three parts: training set, cross validation set, and test set.
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-76.png" alt="screenshot-76.png" />
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-75.png" alt="screenshot-75.png" />
+<img src="./images/screenshot-76.png" alt="screenshot-76.png" />
+<img src="./images/screenshot-75.png" alt="screenshot-75.png" />
 </p>
 
 <p>
@@ -1165,63 +1323,47 @@ Use cross validation error to selection the model degree and use test set error 
 <p>
 Bias (undearfit)
 Variance (overfit)
-<img src="/assets/blog/2015/01/16/Stanford Machine Learning Notes/screenshot-77.png" alt="screenshot-77.png" />
+<img src="./images/screenshot-77.png" alt="screenshot-77.png" />
 </p>
 </div>
 </div>
 </div>
-
 </div>
-</div>
-    <div>
-      <div class="post-meta">
-        <span title="post date" class="post-info">2015-01-16</span>
-        <span title="last modification date" class="post-info">2015-05-10</span>
-        <span title="tags" class="post-info"><a href="/tags/machine-learning/">Machine Learning</a> <a href="/tags/notes/">notes</a></span>
-        <span title="author" class="post-info">Xiaolong Zhang</span>
-      </div>
-      <section>
-        <h1>Comments</h1>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-          //var disqus_developer = 1;
-          var disqus_identifier = "/blog/2015/01/16/Stanford Machine Learning Notes";
-          var disqus_url = "http://heartnheart.github.io/blog/2015/01/16/Stanford Machine Learning Notes";
-          var disqus_shortname = 'heartnheart';
-          /* * * DON'T EDIT BELOW THIS LINE * * */
-          (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-          })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-      </section>
-      <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
-      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-      <script src="/media/js/main.js"></script>
-      <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-61112071-1']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-      </script>
-      <div class="footer">
-        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
-        <p>
-          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:xlzhang &lt;at&gt; cs &lt;dot&gt; hku &lt;dot&gt; hk">Xiaolong Zhang</a>
-          &nbsp;&nbsp;-&nbsp;&nbsp;
-          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
-          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
-        </p>
-      </div>
-    </div>
+<div id="postamble" class="status">
 
-  </body>
+<style type="text/css">
+.back-to-top {
+    position: fixed;
+    bottom: 2em;
+    right: 0px;
+    text-decoration: none;
+    color: #000000;
+    background-color: rgba(235, 235, 235, 0.80);
+    font-size: 12px;
+    padding: 1em;
+    display: none;
+}
+
+.back-to-top:hover {    
+    background-color: rgba(135, 135, 135, 0.50);
+}
+</style>
+
+<div class="back-to-top">
+<a href="#top">Back to top</a> | <a href="mailto:xlzhang@cs.hku.hk">E-mail me</a>
+</div>
+
+<script type="text/javascript">
+    var offset = 220;
+    var duration = 500;
+    jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() > offset) {
+            jQuery('.back-to-top').fadeIn(duration);
+        } else {
+            jQuery('.back-to-top').fadeOut(duration);
+        }
+    });
+</script>
+</div>
+</body>
 </html>
